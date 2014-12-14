@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.virustotal.com/vtapi/v2/file/report
+    body:
+      encoding: UTF-8
+      string: apikey=testapikey&resource=01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546c
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Sun, 14 Dec 2014 04:24:42 GMT
+      Server:
+      - Google Frontend
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"response_code": 0, "resource": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546c",
+        "verbose_msg": "The requested resource is not among the finished, queued or
+        pending scans"}'
+    http_version:
+  recorded_at: Sun, 14 Dec 2014 04:30:19 GMT
+recorded_with: VCR 2.9.3
