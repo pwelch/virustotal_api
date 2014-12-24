@@ -71,6 +71,29 @@ vtreport.response
 }
 ```
 
+### URL Report
+
+```ruby
+require 'virustotal_api'
+
+url     = 'http://www.google.com'
+api_key = 'MY_API_KEY'
+
+vturl_report = VirustotalAPI::URLReport.find(url, api_key)
+
+# Does the resource have any results?
+vturl_report.exists?
+# => true
+
+# URL for Report (if it exists)
+vturl_report.report_url
+# => "https://www.virustotal.com/url/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/analysis/1419457210/"
+
+# Report results (if they exist) are available via #report
+vturl_report.report["scans"]["Opera"]
+# => {"detected"=>false, "result"=>"clean site"}
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/pwelch/virustotal_api/fork )

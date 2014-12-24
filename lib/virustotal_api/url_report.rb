@@ -2,15 +2,16 @@ require 'rest-client'
 require 'json'
 
 module VirustotalAPI
-  class FileReport
-    attr_reader :report, :report_url
+  class URLReport
+    attr_reader :report, :report_url, :scan_id
 
     def initialize(report)
       @report     = report
       @report_url = report.fetch('permalink') { nil }
+      @scan_id    = report.fetch('scan_id') { nil }
     end
 
-    # @param [String] md5/sha1/sha256 hash of file resource
+    # @param [String] md5/sha1/sha256 hash of resource
     # @param [String] Virustotal API Key
     # @return [VirustotalAPI::FileReport] Report Search Result
     def self.find(resource, api_key)
@@ -20,7 +21,7 @@ module VirustotalAPI
       new(report)
     end
 
-    # @param [String] md5/sha1/sha256 hash of resource
+    # @param [String] md5/sha1/sha256 hash of URL resource
     # @param [String] Virustotal API Key
     # @return [Hash] for POST Request
     def self.params(resource, api_key)
@@ -32,7 +33,7 @@ module VirustotalAPI
 
     # @return [String] of API URI
     def self.api_uri
-      @_api_uri ||= VirustotalAPI::URI + '/file/report'
+      @_api_uri ||= VirustotalAPI::URI + '/url/report'
     end
 
     # @return [String] instance method of API URI
