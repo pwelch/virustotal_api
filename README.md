@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-### Report
+### File Report
 
 ```ruby
 require 'virustotal_api'
@@ -28,19 +28,47 @@ require 'virustotal_api'
 sha256  = '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
 api_key = 'MY_API_KEY'
 
-vtreport = VirustotalAPI::File.find(sha256, api_key)
+vtreport = VirustotalAPI::FileReport.find(sha256, api_key)
 
 # Does the resource have any results?
 vtreport.exists?
 # => true
 
-# URL for Report (if it exists)
+# URL for File Report (if it exists)
 vtreport.report_url
 # => "https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1418032127/"
 
 # Report results (if they exist) are available via #report
 vtreport.report["scans"]["ClamAV"]
 # => {"detected"=>false, "version"=>"0.98.5.0", "result"=>nil, "update"=>"20141208"}
+```
+
+### File Scan
+
+```ruby
+require 'virustotal_api'
+
+file    = '/path/to/file'
+api_key = 'MY_API_KEY'
+
+vtscan = VirustotalAPI::FileScan.scan(file, api_key)
+
+# Scan ID of file
+vtscan.scan_id
+# => "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668"
+
+# Response results are available via #response
+vtreport.response
+# =>
+  {"scan_id"=>"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668",
+   "sha1"=>"adc83b19e793491b1c6ea0fd8b46cd9f32e592fc",
+   "resource"=>"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+   "response_code"=>1,
+   "sha256"=>"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+   "permalink"=>"https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1419454668/",
+   "md5"=>"68b329da9893e34099c7d8ad5cb9c940",
+   "verbose_msg"=>"Scan request successfully queued, come back later for the report"
+}
 ```
 
 ## Contributing

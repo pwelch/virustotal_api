@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.virustotal.com/vtapi/v2/file/scan
+    body:
+      encoding: ASCII-8BIT
+      string: "--318862\r\nContent-Disposition: form-data; name=\"apikey\"\r\n\r\ntestapikey\r\n--318862\r\nContent-Disposition:
+        form-data; name=\"filename\"\r\n\r\nnull_file\r\n--318862\r\nContent-Disposition:
+        form-data; name=\"file\"; filename=\"null_file\"\r\nContent-Type: text/plain\r\n\r\n\n\r\n--318862--\r\n"
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '317'
+      Content-Type:
+      - multipart/form-data; boundary=318862
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Wed, 24 Dec 2014 21:14:51 GMT
+      Server:
+      - Google Frontend
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"scan_id": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419455691",
+        "sha1": "adc83b19e793491b1c6ea0fd8b46cd9f32e592fc", "resource": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "response_code": 1, "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "permalink": "https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1419455691/",
+        "md5": "68b329da9893e34099c7d8ad5cb9c940", "verbose_msg": "Scan request successfully
+        queued, come back later for the report"}'
+    http_version:
+  recorded_at: Wed, 24 Dec 2014 21:21:00 GMT
+recorded_with: VCR 2.9.3

@@ -1,8 +1,8 @@
-require 'faraday'
+require 'rest-client'
 require 'json'
 
 module VirustotalAPI
-  class File
+  class FileReport
     attr_reader :report, :report_url
 
     def initialize(report)
@@ -12,9 +12,9 @@ module VirustotalAPI
 
     # @param [String] md5/sha1/sha256 hash of resource
     # @param [String] Virustotal API Key
-    # @return [VirustotalAPI::Report] Report Search Result
+    # @return [VirustotalAPI::FileReport] Report Search Result
     def self.find(resource, api_key)
-      response = Faraday.post(api_uri, params(resource, api_key))
+      response = RestClient.post(api_uri, params(resource, api_key))
       report   = JSON.parse(response.body)
 
       new(report)
