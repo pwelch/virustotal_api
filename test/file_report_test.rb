@@ -35,6 +35,7 @@ class VirustotalAPIFileReportTest < Minitest::Test
       virustotal_report = VirustotalAPI::FileReport.find(@sha256, @api_key)
 
       assert virustotal_report.api_uri.kind_of?(String)
+      assert virustotal_report.api_uri, 'https://www.virustotal.com/vtapi/v2/file/report'
     end
   end
 

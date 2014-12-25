@@ -11,9 +11,9 @@ module VirustotalAPI
       @scan_id    = report.fetch('scan_id') { nil }
     end
 
-    # @param [String] md5/sha1/sha256 hash of resource
+    # @param [String] md5/sha1/sha256 hash or string of URL
     # @param [String] Virustotal API Key
-    # @return [VirustotalAPI::FileReport] Report Search Result
+    # @return [VirustotalAPI::URLReport] Report Search Result
     def self.find(resource, api_key)
       response = RestClient.post(api_uri, params(resource, api_key))
       report   = JSON.parse(response.body)

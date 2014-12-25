@@ -25,4 +25,13 @@ class VirustotalAPIFileScanTest < Minitest::Test
       assert virustotal_scan.scan_id.kind_of?(String)
     end
   end
+
+  def test_params
+    VCR.use_cassette('scan') do
+      virustotal_scan = VirustotalAPI::FileScan.scan(@file_path, @api_key)
+
+      assert virustotal_scan.api_uri.kind_of?(String)
+      assert virustotal_scan.api_uri, 'https://www.virustotal.com/vtapi/v2/file/scan'
+    end
+  end
 end

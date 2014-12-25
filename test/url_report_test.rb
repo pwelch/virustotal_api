@@ -41,6 +41,7 @@ class VirustotalAPIURLReportTest < Minitest::Test
       vturl_report = VirustotalAPI::URLReport.find(@url, @api_key)
 
       assert vturl_report.api_uri.kind_of?(String)
+      assert vturl_report.api_uri, 'https://www.virustotal.com/vtapi/v2/url/report'
     end
   end
 
