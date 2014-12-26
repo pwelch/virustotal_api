@@ -31,21 +31,4 @@ class VirustotalAPIFileReportTest < Minitest::Test
       assert virustotal_report.report_url, permalink
     end
   end
-
-  def test_params
-    VCR.use_cassette('report') do
-      virustotal_report = VirustotalAPI::FileReport.find(@sha256, @api_key)
-
-      assert virustotal_report.api_uri.is_a?(String)
-      assert virustotal_report.api_uri, 'https://www.virustotal.com/vtapi/v2/file/report'
-    end
-  end
-
-  def test_exists?
-    VCR.use_cassette('report') do
-      virustotal_report = VirustotalAPI::FileReport.find(@sha256, @api_key)
-
-      assert virustotal_report.exists?, true
-    end
-  end
 end

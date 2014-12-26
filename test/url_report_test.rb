@@ -36,21 +36,4 @@ class VirustotalAPIURLReportTest < Minitest::Test
       assert vturl_report.scan_id.is_a?(String)
     end
   end
-
-  def test_params
-    VCR.use_cassette('url_report') do
-      vturl_report = VirustotalAPI::URLReport.find(@url, @api_key)
-
-      assert vturl_report.api_uri.is_a?(String)
-      assert vturl_report.api_uri, 'https://www.virustotal.com/vtapi/v2/url/report'
-    end
-  end
-
-  def test_exists?
-    VCR.use_cassette('url_report') do
-      vturl_report = VirustotalAPI::URLReport.find(@url, @api_key)
-
-      assert vturl_report.exists?, true
-    end
-  end
 end

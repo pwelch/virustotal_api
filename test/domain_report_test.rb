@@ -21,15 +21,6 @@ class VirustotalAPIDomainReportTest < Minitest::Test
     end
   end
 
-  def test_params
-    VCR.use_cassette('domain_report') do
-      vtdomain_report = VirustotalAPI::DomainReport.find(@domain, @api_key)
-
-      assert vtdomain_report.api_uri.is_a?(String)
-      assert vtdomain_report.api_uri, 'https://www.virustotal.com/vtapi/v2/domain/report'
-    end
-  end
-
   def test_exists?
     VCR.use_cassette('domain_report') do
       vtdomain_report = VirustotalAPI::DomainReport.find(@domain, @api_key)
