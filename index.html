@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Virustotal api : Ruby Gem for VirusTotal API">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Virustotal api</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pwelch/virustotal_api">View on GitHub</a>
+
+          <h1 id="project_title">Virustotal api</h1>
+          <h2 id="project_tagline">Ruby Gem for VirusTotal API</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pwelch/virustotal_api/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pwelch/virustotal_api/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="virustotalapi" class="anchor" href="#virustotalapi" aria-hidden="true"><span class="octicon octicon-link"></span></a>VirustotalAPI</h1>
+
+<p>Ruby Gem for <a href="https://www.virustotal.com">VirusTotal</a> <a href="https://www.virustotal.com/en/documentation/public-api/">V2 API</a></p>
+
+<p><a href="http://travis-ci.org/pwelch/virustotal_api"><img src="https://secure.travis-ci.org/pwelch/virustotal_api.svg" alt="Build Status"></a></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">gem</span> <span class="pl-s1"><span class="pl-pds">'</span>virustotal_api<span class="pl-pds">'</span></span></pre></div>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install virustotal_api
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a id="file-report" class="anchor" href="#file-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>File Report</h3>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">require</span> <span class="pl-s1"><span class="pl-pds">'</span>virustotal_api<span class="pl-pds">'</span></span>
+
+sha256  <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b<span class="pl-pds">'</span></span>
+api_key <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>MY_API_KEY<span class="pl-pds">'</span></span>
+
+vtreport <span class="pl-k">=</span> <span class="pl-s3">VirustotalAPI</span>::<span class="pl-s3">FileReport</span>.find(sha256, api_key)
+
+<span class="pl-c"># Does the resource have any results?</span>
+vtreport.exists?
+<span class="pl-c"># =&gt; true</span>
+
+<span class="pl-c"># URL for File Report (if it exists)</span>
+vtreport.report_url
+<span class="pl-c"># =&gt; "https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1418032127/"</span>
+
+<span class="pl-c"># Report results (if they exist) are available via #report</span>
+vtreport.report[<span class="pl-s1"><span class="pl-pds">"</span>scans<span class="pl-pds">"</span></span>][<span class="pl-s1"><span class="pl-pds">"</span>ClamAV<span class="pl-pds">"</span></span>]
+<span class="pl-c"># =&gt; {"detected"=&gt;false, "version"=&gt;"0.98.5.0", "result"=&gt;nil, "update"=&gt;"20141208"}</span></pre></div>
+
+<h3>
+<a id="file-scan" class="anchor" href="#file-scan" aria-hidden="true"><span class="octicon octicon-link"></span></a>File Scan</h3>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">require</span> <span class="pl-s1"><span class="pl-pds">'</span>virustotal_api<span class="pl-pds">'</span></span>
+
+file    <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>/path/to/file<span class="pl-pds">'</span></span>
+api_key <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>MY_API_KEY<span class="pl-pds">'</span></span>
+
+vtscan <span class="pl-k">=</span> <span class="pl-s3">VirustotalAPI</span>::<span class="pl-s3">FileScan</span>.scan(file, api_key)
+
+<span class="pl-c"># Scan ID of file</span>
+vtscan.scan_id
+<span class="pl-c"># =&gt; "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668"</span>
+
+<span class="pl-c"># Response results are available via #response</span>
+vtreport.response
+<span class="pl-c"># =&gt;</span>
+{
+  <span class="pl-s1"><span class="pl-pds">"</span>scan_id<span class="pl-pds">"</span></span>=&gt;<span class="pl-s1"><span class="pl-pds">"</span>01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668<span class="pl-pds">"</span></span>,
+  <span class="pl-s1"><span class="pl-pds">"</span>sha1<span class="pl-pds">"</span></span>=&gt;<span class="pl-s1"><span class="pl-pds">"</span>adc83b19e793491b1c6ea0fd8b46cd9f32e592fc<span class="pl-pds">"</span></span>,
+  <span class="pl-s1"><span class="pl-pds">"</span>resource<span class="pl-pds">"</span></span>=&gt;<span class="pl-s1"><span class="pl-pds">"</span>01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b<span class="pl-pds">"</span></span>,
+  <span class="pl-s1"><span class="pl-pds">"</span>response_code<span class="pl-pds">"</span></span>=&gt;<span class="pl-c1">1</span>,
+  <span class="pl-s1"><span class="pl-pds">"</span>sha256<span class="pl-pds">"</span></span>=&gt;<span class="pl-s1"><span class="pl-pds">"</span>01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b<span class="pl-pds">"</span></span>,
+  <span class="pl-s1"><span class="pl-pds">"</span>permalink<span class="pl-pds">"</span></span>=&gt;<span class="pl-s1"><span class="pl-pds">"</span>https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1419454668/<span class="pl-pds">"</span></span>,
+  <span class="pl-s1"><span class="pl-pds">"</span>md5<span class="pl-pds">"</span></span>=&gt;<span class="pl-s1"><span class="pl-pds">"</span>68b329da9893e34099c7d8ad5cb9c940<span class="pl-pds">"</span></span>,
+  <span class="pl-s1"><span class="pl-pds">"</span>verbose_msg<span class="pl-pds">"</span></span>=&gt;<span class="pl-s1"><span class="pl-pds">"</span>Scan request successfully queued, come back later for the report<span class="pl-pds">"</span></span>
+}</pre></div>
+
+<h3>
+<a id="url-report" class="anchor" href="#url-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>URL Report</h3>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">require</span> <span class="pl-s1"><span class="pl-pds">'</span>virustotal_api<span class="pl-pds">'</span></span>
+
+url     <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>http://www.google.com<span class="pl-pds">'</span></span>
+api_key <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>MY_API_KEY<span class="pl-pds">'</span></span>
+
+vturl_report <span class="pl-k">=</span> <span class="pl-s3">VirustotalAPI</span>::<span class="pl-s3">URLReport</span>.find(url, api_key)
+
+<span class="pl-c"># Does the resource have any results?</span>
+vturl_report.exists?
+<span class="pl-c"># =&gt; true</span>
+
+<span class="pl-c"># URL for Report (if it exists)</span>
+vturl_report.report_url
+<span class="pl-c"># =&gt; "https://www.virustotal.com/url/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/analysis/1419457210/"</span>
+
+<span class="pl-c"># Report results (if they exist) are available via #report</span>
+vturl_report.report[<span class="pl-s1"><span class="pl-pds">"</span>scans<span class="pl-pds">"</span></span>][<span class="pl-s1"><span class="pl-pds">"</span>Opera<span class="pl-pds">"</span></span>]
+<span class="pl-c"># =&gt; {"detected"=&gt;false, "result"=&gt;"clean site"}</span></pre></div>
+
+<h3>
+<a id="ip-report" class="anchor" href="#ip-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>IP Report</h3>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">require</span> <span class="pl-s1"><span class="pl-pds">'</span>virustotal_api<span class="pl-pds">'</span></span>
+
+ip      <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>8.8.8.8<span class="pl-pds">'</span></span>
+api_key <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>MY_API_KEY<span class="pl-pds">'</span></span>
+
+vtip_report <span class="pl-k">=</span> <span class="pl-s3">VirustotalAPI</span>::<span class="pl-s3">IPReport</span>.find(ip, api_key)
+
+<span class="pl-c"># Does the resource have any results?</span>
+vtip_report.exists?
+<span class="pl-c"># =&gt; true</span>
+
+<span class="pl-c"># Report results (if they exist) are available via #report</span>
+vtip_report.report
+<span class="pl-c"># =&gt; Hash of report results</span></pre></div>
+
+<h3>
+<a id="domain-report" class="anchor" href="#domain-report" aria-hidden="true"><span class="octicon octicon-link"></span></a>Domain Report</h3>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">require</span> <span class="pl-s1"><span class="pl-pds">'</span>virustotal_api<span class="pl-pds">'</span></span>
+
+domain  <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>virustotal.com<span class="pl-pds">'</span></span>
+api_key <span class="pl-k">=</span> <span class="pl-s1"><span class="pl-pds">'</span>MY_API_KEY<span class="pl-pds">'</span></span>
+
+vtdomain_report <span class="pl-k">=</span> <span class="pl-s3">VirustotalAPI</span>::<span class="pl-s3">DomainReport</span>.find(domain, api_key)
+
+<span class="pl-c"># Does the resource have any results?</span>
+vtdomain_report.exists?
+<span class="pl-c"># =&gt; true</span>
+
+<span class="pl-c"># Report results (if they exist) are available via #report</span>
+vtdomain_report.report
+<span class="pl-c"># =&gt; Hash of report results</span></pre></div>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it ( <a href="https://github.com/pwelch/virustotal_api/fork">https://github.com/pwelch/virustotal_api/fork</a> )</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Virustotal api maintained by <a href="https://github.com/pwelch">pwelch</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
