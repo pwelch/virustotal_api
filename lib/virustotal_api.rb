@@ -1,3 +1,4 @@
+require_relative "virustotal_api/domain_report"
 require_relative "virustotal_api/file_report"
 require_relative "virustotal_api/file_scan"
 require_relative "virustotal_api/ip_report"
