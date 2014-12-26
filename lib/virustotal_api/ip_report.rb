@@ -1,21 +1,20 @@
 # encoding: utf-8
-require 'rest-client'
-require 'json'
+require_relative 'base'
 
 module VirustotalAPI
-  class IPReport
+  class IPReport < Base
     attr_reader :report
 
     def initialize(report)
       @report = report
     end
 
-    # @param [String] IPv4 Address
-    # @param [String] Virustotal API Key
+    # @param [String] ip address IPv4 format
+    # @param [String] api_key for virustotal
     # @return [VirustotalAPI::IPReport] Report Search Result
     def self.find(ip, api_key)
       response = RestClient.get(
-        api_uri,
+        api_uri + '/ip-address/report',
         { :params => params(ip, api_key) }
       )
       report = JSON.parse(response.body)
@@ -23,32 +22,14 @@ module VirustotalAPI
       new(report)
     end
 
-    # @param [String] IPv4 Address
-    # @param [String] Virustotal API Key
-    # @return [Hash] for GET Request
+    # @param [String] ip address IPv4 format
+    # @param [String] api_key for virustotal
+    # @return [Hash] params for GET Request
     def self.params(ip, api_key)
       {
         :ip     => ip,
         :apikey => api_key
       }
-    end
-
-    # @return [String] of API URI
-    def self.api_uri
-      @_api_uri ||= VirustotalAPI::URI + '/ip-address/report'
-    end
-
-    # @return [String] instance method of API URI
-    def api_uri
-      self.class.api_uri
-    end
-
-    # @return [Boolean] if report for resource exists
-    # 0 => not_present, 1 => exists, -1 => invalid_ip_address
-    def exists?
-      response_code = report.fetch('response_code') { nil }
-
-      response_code == 1 ? true : false
     end
   end
 end

@@ -12,4 +12,13 @@ end
 
 RuboCop::RakeTask.new
 
+require 'yard'
+YARD::Rake::YardocTask.new
+namespace :yard do
+  desc 'Run the YARD server'
+  task :start do
+    sh 'bundle exec yard server --reload'
+  end
+end
+
 task :default => :test
