@@ -1,7 +1,8 @@
-require_relative "virustotal_api/domain_report"
-require_relative "virustotal_api/file_report"
-require_relative "virustotal_api/file_scan"
-require_relative "virustotal_api/ip_report"
-require_relative "virustotal_api/url_report"
-require_relative "virustotal_api/uri"
-require_relative "virustotal_api/version"
+# encoding: utf-8
+require 'virustotal_api/domain_report'
+require 'virustotal_api/file_report'
+require 'virustotal_api/file_scan'
+require 'virustotal_api/ip_report'
+require 'virustotal_api/url_report'
+require 'virustotal_api/uri'
+require 'virustotal_api/version'

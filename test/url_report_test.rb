@@ -1,3 +1,4 @@
+# encoding: utf-8
 require './test/test_helper'
 
 class VirustotalAPIURLReportTest < Minitest::Test
@@ -15,8 +16,8 @@ class VirustotalAPIURLReportTest < Minitest::Test
       vturl_report = VirustotalAPI::URLReport.find(@url, @api_key)
 
       # Make sure that the JSON was parsed
-      assert vturl_report.kind_of?(VirustotalAPI::URLReport)
-      assert vturl_report.report.kind_of?(Hash)
+      assert vturl_report.is_a?(VirustotalAPI::URLReport)
+      assert vturl_report.report.is_a?(Hash)
     end
   end
 
@@ -24,7 +25,7 @@ class VirustotalAPIURLReportTest < Minitest::Test
     VCR.use_cassette('url_report') do
       vturl_report = VirustotalAPI::URLReport.find(@url, @api_key)
 
-      assert vturl_report.report_url.kind_of?(String)
+      assert vturl_report.report_url.is_a?(String)
     end
   end
 
@@ -32,7 +33,7 @@ class VirustotalAPIURLReportTest < Minitest::Test
     VCR.use_cassette('url_report') do
       vturl_report = VirustotalAPI::URLReport.find(@url, @api_key)
 
-      assert vturl_report.scan_id.kind_of?(String)
+      assert vturl_report.scan_id.is_a?(String)
     end
   end
 
@@ -40,7 +41,7 @@ class VirustotalAPIURLReportTest < Minitest::Test
     VCR.use_cassette('url_report') do
       vturl_report = VirustotalAPI::URLReport.find(@url, @api_key)
 
-      assert vturl_report.api_uri.kind_of?(String)
+      assert vturl_report.api_uri.is_a?(String)
       assert vturl_report.api_uri, 'https://www.virustotal.com/vtapi/v2/url/report'
     end
   end

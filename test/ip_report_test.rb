@@ -1,3 +1,4 @@
+# encoding: utf-8
 require './test/test_helper'
 
 class VirustotalAPIIPReportTest < Minitest::Test
@@ -15,8 +16,8 @@ class VirustotalAPIIPReportTest < Minitest::Test
       vtip_report = VirustotalAPI::IPReport.find(@ip, @api_key)
 
       # Make sure that the JSON was parsed
-      assert vtip_report.kind_of?(VirustotalAPI::IPReport)
-      assert vtip_report.report.kind_of?(Hash)
+      assert vtip_report.is_a?(VirustotalAPI::IPReport)
+      assert vtip_report.report.is_a?(Hash)
     end
   end
 
@@ -24,7 +25,7 @@ class VirustotalAPIIPReportTest < Minitest::Test
     VCR.use_cassette('ip_report') do
       vtip_report = VirustotalAPI::IPReport.find(@ip, @api_key)
 
-      assert vtip_report.api_uri.kind_of?(String)
+      assert vtip_report.api_uri.is_a?(String)
       assert vtip_report.api_uri, 'https://www.virustotal.com/vtapi/v2/ip-address/report'
     end
   end

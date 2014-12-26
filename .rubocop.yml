@@ -1,0 +1,27 @@
+# This is the configuration used to check the rubocop source code.
+
+AllCops:
+  Exclude:
+    - 'test/fixtures/*'
+
+Style/StringLiterals:
+  Enabled: true
+
+Style/UnneededPercentQ:
+  Enabled: true
+
+Style/HashSyntax:
+  EnforcedStyle: hash_rockets
+
+# Disabled Checks
+Style/Documentation:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Enabled: false
+
+Style/BracesAroundHashParameters:
+  Enabled: false

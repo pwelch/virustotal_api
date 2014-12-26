@@ -1,3 +1,4 @@
+# encoding: utf-8
 require './test/test_helper'
 
 class VirustotalAPIFileScanTest < Minitest::Test
@@ -14,7 +15,7 @@ class VirustotalAPIFileScanTest < Minitest::Test
     VCR.use_cassette('scan') do
       virustotal_scan = VirustotalAPI::FileScan.scan(@file_path, @api_key)
 
-      assert virustotal_scan.response.kind_of?(Hash)
+      assert virustotal_scan.response.is_a?(Hash)
     end
   end
 
@@ -22,7 +23,7 @@ class VirustotalAPIFileScanTest < Minitest::Test
     VCR.use_cassette('scan') do
       virustotal_scan = VirustotalAPI::FileScan.scan(@file_path, @api_key)
 
-      assert virustotal_scan.scan_id.kind_of?(String)
+      assert virustotal_scan.scan_id.is_a?(String)
     end
   end
 
@@ -30,7 +31,7 @@ class VirustotalAPIFileScanTest < Minitest::Test
     VCR.use_cassette('scan') do
       virustotal_scan = VirustotalAPI::FileScan.scan(@file_path, @api_key)
 
-      assert virustotal_scan.api_uri.kind_of?(String)
+      assert virustotal_scan.api_uri.is_a?(String)
       assert virustotal_scan.api_uri, 'https://www.virustotal.com/vtapi/v2/file/scan'
     end
   end

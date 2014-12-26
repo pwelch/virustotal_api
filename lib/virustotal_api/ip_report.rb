@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'rest-client'
 require 'json'
 
@@ -15,7 +16,7 @@ module VirustotalAPI
     def self.find(ip, api_key)
       response = RestClient.get(
         api_uri,
-        {:params => params(ip, api_key)}
+        { :params => params(ip, api_key) }
       )
       report = JSON.parse(response.body)
 

@@ -1,3 +1,4 @@
+# encoding: utf-8
 require './test/test_helper'
 
 class VirustotalAPIDomainReportTest < Minitest::Test
@@ -15,8 +16,8 @@ class VirustotalAPIDomainReportTest < Minitest::Test
       vtdomain_report = VirustotalAPI::DomainReport.find(@domain, @api_key)
 
       # Make sure that the JSON was parsed
-      assert vtdomain_report.kind_of?(VirustotalAPI::DomainReport)
-      assert vtdomain_report.report.kind_of?(Hash)
+      assert vtdomain_report.is_a?(VirustotalAPI::DomainReport)
+      assert vtdomain_report.report.is_a?(Hash)
     end
   end
 
@@ -24,7 +25,7 @@ class VirustotalAPIDomainReportTest < Minitest::Test
     VCR.use_cassette('domain_report') do
       vtdomain_report = VirustotalAPI::DomainReport.find(@domain, @api_key)
 
-      assert vtdomain_report.api_uri.kind_of?(String)
+      assert vtdomain_report.api_uri.is_a?(String)
       assert vtdomain_report.api_uri, 'https://www.virustotal.com/vtapi/v2/domain/report'
     end
   end

@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'json'
 require 'rest-client'
 
@@ -14,7 +15,7 @@ module VirustotalAPI
     # @param [String] Virustotal API Key
     # @param [Hash] Options Hash
     # @return [VirusotalAPIFileScan] Reponse
-    def self.scan(file_path, api_key, opts={})
+    def self.scan(file_path, api_key, opts = {})
       response = RestClient.post(
         api_uri,
         :apikey   => api_key,
