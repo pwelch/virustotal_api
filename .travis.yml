@@ -1,4 +1,8 @@
+---
 sudo: false
+branches:
+  except:
+    - gh-pages
 cache: bundler
 language: ruby
 rvm:

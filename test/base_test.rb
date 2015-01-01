@@ -13,7 +13,7 @@ class VirustotalAPIBaseTest < Minitest::Test
   end
 
   # Instance Method
-  def test_api_uri
+  def test_api_uri_instance_method
     base_uri = 'https://www.virustotal.com/vtapi/v2'
     vt_base = VirustotalAPI::Base.new
 
@@ -22,7 +22,7 @@ class VirustotalAPIBaseTest < Minitest::Test
   end
 
   # Class Method
-  def test_api_uri
+  def test_api_uri_class_method
     base_uri = 'https://www.virustotal.com/vtapi/v2'
 
     assert VirustotalAPI::Base.api_uri.is_a?(String)
