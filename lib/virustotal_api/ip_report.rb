@@ -17,7 +17,7 @@ module VirustotalAPI
         api_uri + '/ip-address/report',
         { :params => params(ip, api_key) }
       )
-      report = JSON.parse(response.body)
+      report = parse(response)
 
       new(report)
     end

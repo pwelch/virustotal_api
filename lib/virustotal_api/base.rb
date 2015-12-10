@@ -1,3 +1,5 @@
+require 'virustotal_api/exceptions'
+
 require 'rest-client'
 require 'json'
 
@@ -6,6 +8,16 @@ module VirustotalAPI
     # @return [String] string of API URI class method
     def self.api_uri
       VirustotalAPI::URI
+    end
+
+    # @param [RestClient::Response] response
+    # @return [Hash] the parsed JSON.
+    def self.parse(response)
+      if response.code == 204
+        raise(RateLimitError,"maximum number of 4 requests per minute reached")
+      end
+
+      JSON.parse(response.body)
     end
 
     # @return [String] string of API URI instance method

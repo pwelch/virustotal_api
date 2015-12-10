@@ -18,7 +18,7 @@ module VirustotalAPI
         api_uri + '/file/report',
         params(resource, api_key)
       )
-      report = JSON.parse(response.body)
+      report = parse(response)
 
       new(report)
     end
