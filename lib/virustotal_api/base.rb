@@ -14,7 +14,7 @@ module VirustotalAPI
     # @return [Hash] the parsed JSON.
     def self.parse(response)
       if response.code == 204
-        raise(RateLimitError,"maximum number of 4 requests per minute reached")
+        fail(RateLimitError, 'maximum number of 4 requests per minute reached')
       end
 
       JSON.parse(response.body)
