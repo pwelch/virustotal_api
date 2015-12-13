@@ -29,6 +29,24 @@ class VirustotalAPIBaseTest < Minitest::Test
     assert VirustotalAPI::Base.api_uri, base_uri
   end
 
+  def test_parse_code_200
+    mock_response_200 = Minitest::Mock.new
+    mock_response_200.expect(:code, 200)
+    mock_response_200.expect(:body, '{}')
+
+    assert VirustotalAPI::Base.parse(mock_response_200), {}
+  end
+
+  def test_parse_code_204
+    mock_response_204 = Minitest::Mock.new
+    mock_response_204.expect(:code, 204)
+    mock_response_204.expect(:body, '{}')
+
+    assert_raises VirustotalAPI::RateLimitError do
+      VirustotalAPI::Base.parse(mock_response_204)
+    end
+  end
+
   # Test using FileReport
   def test_exists?
     VCR.use_cassette('report') do

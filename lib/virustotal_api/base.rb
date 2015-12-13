@@ -1,5 +1,4 @@
 require 'virustotal_api/exceptions'
-
 require 'rest-client'
 require 'json'
 
