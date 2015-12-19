@@ -23,6 +23,10 @@ Or install it yourself as:
 
 ## Usage
 
+VirusTotal only allows 4 queries per minute for their Public API. https://www.virustotal.com/en/faq/
+
+You will need a Private API Key if you require more queries per minute.
+
 ### File Report
 
 ```ruby
