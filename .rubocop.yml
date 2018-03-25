@@ -25,3 +25,11 @@ Style/RegexpLiteral:
 
 Style/BracesAroundHashParameters:
   Enabled: false
+
+Lint/MissingCopEnableDirective:
+  Exclude:
+    - 'test/base_test.rb'
+
+Naming/UncommunicativeMethodParamName:
+  Exclude:
+    - 'lib/virustotal_api/ip_report.rb'
