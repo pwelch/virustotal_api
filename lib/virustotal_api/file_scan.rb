@@ -1,4 +1,3 @@
-# encoding: utf-8
 require_relative 'base'
 
 module VirustotalAPI
@@ -30,7 +29,7 @@ module VirustotalAPI
     def queued_for_analysis?
       response_code = report.fetch('response_code') { nil }
 
-      response_code == -2 ? true : false
+      response_code == -2
     end
   end
 end

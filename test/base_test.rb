@@ -1,12 +1,12 @@
-# encoding: utf-8
-# rubocop:disable LineLength
 require './test/test_helper'
 
 class VirustotalAPIBaseTest < Minitest::Test
+  # rubocop:disable LineLength
   def setup
     @sha256  = '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
     @api_key = 'testapikey'
   end
+  # rubocop:enable LineLength
 
   def test_class_exists
     assert VirustotalAPI::Base
@@ -30,20 +30,20 @@ class VirustotalAPIBaseTest < Minitest::Test
   end
 
   def test_parse_code_200
-    mock_response_200 = Minitest::Mock.new
-    mock_response_200.expect(:code, 200)
-    mock_response_200.expect(:body, '{}')
+    mock_response200 = Minitest::Mock.new
+    mock_response200.expect(:code, 200)
+    mock_response200.expect(:body, '{}')
 
-    assert VirustotalAPI::Base.parse(mock_response_200), {}
+    assert VirustotalAPI::Base.parse(mock_response200), {}
   end
 
   def test_parse_code_204
-    mock_response_204 = Minitest::Mock.new
-    mock_response_204.expect(:code, 204)
-    mock_response_204.expect(:body, '{}')
+    mock_response204 = Minitest::Mock.new
+    mock_response204.expect(:code, 204)
+    mock_response204.expect(:body, '{}')
 
     assert_raises VirustotalAPI::RateLimitError do
-      VirustotalAPI::Base.parse(mock_response_204)
+      VirustotalAPI::Base.parse(mock_response204)
     end
   end
 

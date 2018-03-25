@@ -1,4 +1,3 @@
-# encoding: utf-8
 # rubocop:disable LineLength
 require './test/test_helper'
 
@@ -32,3 +31,4 @@ class VirustotalAPIFileReportTest < Minitest::Test
     end
   end
 end
+# rubocop:enable LineLength
