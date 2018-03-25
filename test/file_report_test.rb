@@ -1,8 +1,7 @@
-# encoding: utf-8
-# rubocop:disable LineLength
 require './test/test_helper'
 
 class VirustotalAPIFileReportTest < Minitest::Test
+  # rubocop:disable LineLength
   def setup
     @sha256  = '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
     @api_key = 'testapikey'
@@ -31,4 +30,5 @@ class VirustotalAPIFileReportTest < Minitest::Test
       assert virustotal_report.report_url, permalink
     end
   end
+  # rubocop:enable LineLength
 end

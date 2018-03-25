@@ -1,4 +1,4 @@
-# encoding: utf-8
+
 require './lib/virustotal_api'
 require 'minitest/autorun'
 require 'webmock/minitest'
