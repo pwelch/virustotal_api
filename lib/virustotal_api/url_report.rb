@@ -13,11 +13,12 @@ module VirustotalAPI
 
     # @param [String] resource file as a md5/sha1/sha256 hash
     # @param [String] api_key for virustotal
+    # @param [Integer] optional param to start scan if not found. 1 for true
     # @return [VirustotalAPI::URLReport] Report Search Result
-    def self.find(resource, api_key)
+    def self.find(resource, api_key, scan = 0)
       response = RestClient.post(
         api_uri + '/url/report',
-        params(resource, api_key)
+        params(resource, api_key, scan)
       )
       report = parse(response)
 
@@ -26,11 +27,13 @@ module VirustotalAPI
 
     # @param [String] resource file as a md5/sha1/sha256 hash
     # @param [String] api_key for virustotal
+    # @param [Integer] optional param to start scan if not found. 1 for true
     # @return [Hash] params for POST Request
-    def self.params(resource, api_key)
+    def self.params(resource, api_key, scan = 0)
       {
         :resource => resource,
-        :apikey   => api_key
+        :apikey   => api_key,
+        :scan     => scan.to_s
       }
     end
   end
