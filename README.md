@@ -4,6 +4,7 @@ Ruby Gem for [VirusTotal](https://www.virustotal.com) [V2 API](https://www.virus
 
 [![Gem Version](https://badge.fury.io/rb/virustotal_api.svg)](http://badge.fury.io/rb/virustotal_api)
 [![Build Status](https://secure.travis-ci.org/pwelch/virustotal_api.svg)](http://travis-ci.org/pwelch/virustotal_api)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpwelch%2Fvirustotal_api.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpwelch%2Fvirustotal_api?ref=badge_shield)
 
 ## Installation
 
@@ -147,3 +148,7 @@ vtdomain_report.report
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpwelch%2Fvirustotal_api.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpwelch%2Fvirustotal_api?ref=badge_large)
