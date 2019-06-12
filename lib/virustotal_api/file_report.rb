@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 require_relative 'base'
 
@@ -28,8 +29,8 @@ module VirustotalAPI
     # @return [Hash] params for POST Request
     def self.params(resource, api_key)
       {
-        :resource => resource,
-        :apikey   => api_key
+        resource: resource,
+        apikey: api_key
       }
     end
   end

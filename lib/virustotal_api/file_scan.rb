@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 require_relative 'base'
 
@@ -17,9 +18,9 @@ module VirustotalAPI
     def self.scan(file_path, api_key, opts = {})
       response = RestClient.post(
         api_uri + '/file/scan',
-        :apikey   => api_key,
-        :filename => opts.fetch('filename') { File.basename(file_path) },
-        :file     => File.open(file_path, 'r')
+        apikey: api_key,
+        filename: opts.fetch('filename') { File.basename(file_path) },
+        file: File.open(file_path, 'r')
       )
 
       new(response)
