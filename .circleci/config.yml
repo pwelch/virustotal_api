@@ -5,8 +5,14 @@ jobs:
       - image: circleci/ruby:2.5.3-stretch
     steps:
       - checkout
-      - run: bundle install
-      - type: shell
-        command: bundle exec rake rubocop
-        command: bundle exec rake test
+      - run: 
+          name: Setup
+          command: |
+            bundle install
+      - run: 
+          name: Rubocop
+          command: bundle exec rake rubocop
+      - run:
+          name: Run Tests
+          command: bundle exec rake test
 
