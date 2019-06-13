@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.5.3-stretch
+    steps:
+      - checkout
+      - run: bundle install
+      - type: shell
+        command: bundle exec rake rubocop
+        command: bundle exec rake test
+

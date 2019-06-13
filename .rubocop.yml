@@ -10,9 +10,6 @@ Style/StringLiterals:
 Style/UnneededPercentQ:
   Enabled: true
 
-Style/HashSyntax:
-  EnforcedStyle: hash_rockets
-
 # Disabled Checks
 Style/Documentation:
   Enabled: false

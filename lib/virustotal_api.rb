@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 require 'virustotal_api/domain_report'
 require 'virustotal_api/file_report'

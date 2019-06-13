@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 require_relative 'base'
 
@@ -15,7 +16,7 @@ module VirustotalAPI
     def self.find(ip, api_key)
       response = RestClient.get(
         api_uri + '/ip-address/report',
-        { :params => params(ip, api_key) }
+        { params: params(ip, api_key) }
       )
       report = parse(response)
 
@@ -27,8 +28,8 @@ module VirustotalAPI
     # @return [Hash] params for GET Request
     def self.params(ip, api_key)
       {
-        :ip     => ip,
-        :apikey => api_key
+        ip: ip,
+        apikey: api_key
       }
     end
   end

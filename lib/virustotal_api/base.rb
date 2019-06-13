@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'virustotal_api/exceptions'
 require 'rest-client'
 require 'json'
