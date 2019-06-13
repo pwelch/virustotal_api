@@ -8,6 +8,7 @@ jobs:
       - run: 
           name: Setup
           command: |
+            gem update bundler
             bundle install
       - run: 
           name: Rubocop
