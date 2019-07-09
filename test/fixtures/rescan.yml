@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.virustotal.com/vtapi/v2/file/rescan
+    body:
+      encoding: UTF-8
+      string: apikey=testapikey&resource=01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Length:
+      - '145'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - www.virustotal.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      X-Cloud-Trace-Context:
+      - 642602c25c3eda6df338b27d506a65e3
+      Date:
+      - Tue, 09 Jul 2019 15:04:57 GMT
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '402'
+    body:
+      encoding: UTF-8
+      string: '{"permalink": "https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1562684247/",
+        "response_code": 1, "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "resource": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+        "scan_id": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1562684247"}'
+    http_version: 
+  recorded_at: Tue, 09 Jul 2019 15:04:34 GMT
+recorded_with: VCR 5.0.0
