@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.virustotal.com/vtapi/v2/url/scan
+    body:
+      encoding: UTF-8
+      string: apikey=testapikey&url=http%3A%2F%2Fwww.google.com
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (linux-gnu x86_64) ruby/2.5.1p57
+      Content-Length:
+      - '103'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Host:
+      - www.virustotal.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json
+      X-Cloud-Trace-Context:
+      - 3e75d46007d403e053ab2dea60a4aa71
+      Date:
+      - Wed, 10 Jul 2019 09:49:10 GMT
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '433'
+    body:
+      encoding: UTF-8
+      string: '{"permalink": "https://www.virustotal.com/url/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/analysis/1562751553/",
+        "resource": "http://www.google.com/", "url": "http://www.google.com/", "response_code":
+        1, "scan_date": "2019-07-10 09:39:13", "scan_id": "dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1562751553",
+        "verbose_msg": "Scan request successfully queued, come back later for the
+        report"}'
+    http_version: 
+  recorded_at: Wed, 10 Jul 2019 09:48:46 GMT
+recorded_with: VCR 5.0.0

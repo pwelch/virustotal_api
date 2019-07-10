@@ -102,6 +102,34 @@ vturl_report.report["scans"]["Opera"]
 # => {"detected"=>false, "result"=>"clean site"}
 ```
 
+### URL Scan
+
+```ruby
+require 'virustotal_api'
+
+url     = 'http://www.google.com'
+api_key = 'MY_API_KEY'
+
+vturl_scan = VirustotalAPI::URLScan.scan(url, api_key)
+
+# Scan ID of file
+vturl_scan.scan_id
+# => "dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1562751553"
+
+# Response results are available via #response
+vturl_scan.response
+# =>
+{
+  "permalink": "https://www.virustotal.com/url/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/analysis/1562751553/",
+  "resource": "http://www.google.com/",
+  "url": "http://www.google.com/",
+  "response_code": 1,
+  "scan_date": "2019-07-10 09:39:13",
+  "scan_id": "dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1562751553",
+  "verbose_msg": "Scan request successfully queued, come back later for the report"
+}
+```
+
 ### IP Report
 
 ```ruby
