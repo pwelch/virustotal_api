@@ -141,9 +141,10 @@ vtdomain_report.report
 ```
 
 ## Contributors
-- @postmodern
-- @mkunkel
-- @jonnynux 
+
+- [@postmodern](https://github.com/postmodern)
+- [@mkunkel](https://github.com/mkunkel)
+- [@jonnynux](https://github.com/jonnynux)
 
 ## Contributing
 
