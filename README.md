@@ -140,6 +140,11 @@ vtdomain_report.report
 # => Hash of report results
 ```
 
+## Contributors
+- @postmodern
+- @mkunkel
+- @jonnynux 
+
 ## Contributing
 
 1. Fork it ( https://github.com/pwelch/virustotal_api/fork )
