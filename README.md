@@ -65,7 +65,7 @@ vtscan.scan_id
 # => "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668"
 
 # Response results are available via #response
-vtreport.response
+vtscan.response
 # =>
 {
   "scan_id"=>"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668",
