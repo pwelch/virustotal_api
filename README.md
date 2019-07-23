@@ -65,7 +65,7 @@ vtscan.scan_id
 # => "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668"
 
 # Response results are available via #response
-vtreport.response
+vtscan.response
 # =>
 {
   "scan_id"=>"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668",
@@ -76,6 +76,32 @@ vtreport.response
   "permalink"=>"https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1419454668/",
   "md5"=>"68b329da9893e34099c7d8ad5cb9c940",
   "verbose_msg"=>"Scan request successfully queued, come back later for the report"
+}
+```
+
+### File Rescan
+
+```ruby
+require 'virustotal_api'
+
+sha256  = '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
+api_key = 'MY_API_KEY'
+
+vtrescan = VirustotalAPI::FileRescan.rescan(sha256, api_key)
+
+# Rescan ID of file
+vtrescan.rescan_id
+# => "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1562684247"
+
+# Response results are available via #response
+vtrescan.response
+# =>
+{
+  "permalink": "https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1562684247/",
+  "response_code": 1,
+  "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+  "resource": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+  "scan_id": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1562684247"
 }
 ```
 
