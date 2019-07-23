@@ -12,7 +12,7 @@ module VirustotalAPI
       @scan_id    = report.fetch('scan_id') { nil }
     end
 
-    # @param [String] resource file as a md5/sha1/sha256 hash
+    # @param [String] resource as an ip/domain/url
     # @param [String] api_key for virustotal
     # @param [Integer] optional param to start scan if not found. 1 for true
     # @return [VirustotalAPI::URLReport] Report Search Result
@@ -26,7 +26,7 @@ module VirustotalAPI
       new(report)
     end
 
-    # @param [String] resource file as a md5/sha1/sha256 hash
+    # @param [String] resource as an ip/domain/url
     # @param [String] api_key for virustotal
     # @param [Integer] optional param to start scan if not found. 1 for true
     # @return [Hash] params for POST Request
