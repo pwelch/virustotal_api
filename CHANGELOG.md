@@ -1,5 +1,11 @@
 # VirusTotal API Changelog
 
+## 0.4.0
+
+* Add ReScan [#15](https://github.com/pwelch/virustotal_api/pull/15)
+* Add URL Scan [#16](https://github.com/pwelch/virustotal_api/pull/16)
+  * [@jonnynux](https://github.com/jonnynux)
+  
 ## 0.3.0
 
 * Add optional scan param for url report API [#5](https://github.com/pwelch/virustotal_api/pull/5)
