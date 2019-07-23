@@ -3,7 +3,7 @@
 Ruby Gem for [VirusTotal](https://www.virustotal.com) [V2 API](https://www.virustotal.com/en/documentation/public-api/)
 
 [![Gem Version](https://badge.fury.io/rb/virustotal_api.svg)](http://badge.fury.io/rb/virustotal_api)
-[![Build Status](https://secure.travis-ci.org/pwelch/virustotal_api.svg)](http://travis-ci.org/pwelch/virustotal_api)
+[![CircleCI](https://circleci.com/gh/pwelch/virustotal_api.svg?style=svg)](https://circleci.com/gh/pwelch/virustotal_api)
 
 ## Installation
 
@@ -22,6 +22,10 @@ Or install it yourself as:
     $ gem install virustotal_api
 
 ## Usage
+
+VirusTotal only allows 4 queries per minute for their Public API. https://www.virustotal.com/en/faq/
+
+You will need a Private API Key if you require more queries per minute.
 
 ### File Report
 
@@ -61,7 +65,7 @@ vtscan.scan_id
 # => "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668"
 
 # Response results are available via #response
-vtreport.response
+vtscan.response
 # =>
 {
   "scan_id"=>"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668",
@@ -72,6 +76,32 @@ vtreport.response
   "permalink"=>"https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1419454668/",
   "md5"=>"68b329da9893e34099c7d8ad5cb9c940",
   "verbose_msg"=>"Scan request successfully queued, come back later for the report"
+}
+```
+
+### File Rescan
+
+```ruby
+require 'virustotal_api'
+
+sha256  = '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
+api_key = 'MY_API_KEY'
+
+vtrescan = VirustotalAPI::FileRescan.rescan(sha256, api_key)
+
+# Rescan ID of file
+vtrescan.rescan_id
+# => "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1562684247"
+
+# Response results are available via #response
+vtrescan.response
+# =>
+{
+  "permalink": "https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1562684247/",
+  "response_code": 1,
+  "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+  "resource": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+  "scan_id": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1562684247"
 }
 ```
 
@@ -96,6 +126,34 @@ vturl_report.report_url
 # Report results (if they exist) are available via #report
 vturl_report.report["scans"]["Opera"]
 # => {"detected"=>false, "result"=>"clean site"}
+```
+
+### URL Scan
+
+```ruby
+require 'virustotal_api'
+
+url     = 'http://www.google.com'
+api_key = 'MY_API_KEY'
+
+vturl_scan = VirustotalAPI::URLScan.scan(url, api_key)
+
+# Scan ID of file
+vturl_scan.scan_id
+# => "dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1562751553"
+
+# Response results are available via #response
+vturl_scan.response
+# =>
+{
+  "permalink": "https://www.virustotal.com/url/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/analysis/1562751553/",
+  "resource": "http://www.google.com/",
+  "url": "http://www.google.com/",
+  "response_code": 1,
+  "scan_date": "2019-07-10 09:39:13",
+  "scan_id": "dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1562751553",
+  "verbose_msg": "Scan request successfully queued, come back later for the report"
+}
 ```
 
 ### IP Report
@@ -135,6 +193,12 @@ vtdomain_report.exists?
 vtdomain_report.report
 # => Hash of report results
 ```
+
+## Contributors
+
+- [@postmodern](https://github.com/postmodern)
+- [@mkunkel](https://github.com/mkunkel)
+- [@jonnynux](https://github.com/jonnynux)
 
 ## Contributing
 
