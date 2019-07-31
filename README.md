@@ -65,7 +65,7 @@ vtscan.scan_id
 # => "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668"
 
 # Response results are available via #response
-vtscan.response
+vtscan.report
 # =>
 {
   "scan_id"=>"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668",
@@ -94,7 +94,7 @@ vtrescan.rescan_id
 # => "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1562684247"
 
 # Response results are available via #response
-vtrescan.response
+vtrescan.report
 # =>
 {
   "permalink": "https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1562684247/",
@@ -143,7 +143,7 @@ vturl_scan.scan_id
 # => "dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1562751553"
 
 # Response results are available via #response
-vturl_scan.response
+vturl_scan.report
 # =>
 {
   "permalink": "https://www.virustotal.com/url/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/analysis/1562751553/",

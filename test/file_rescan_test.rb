@@ -17,7 +17,7 @@ class VirustotalAPIFileRescanTest < Minitest::Test
     VCR.use_cassette('rescan') do
       virustotal_rescan = VirustotalAPI::FileRescan.rescan(@sha256, @api_key)
 
-      assert virustotal_rescan.response.is_a?(Hash)
+      assert virustotal_rescan.report.is_a?(Hash)
     end
   end
 
