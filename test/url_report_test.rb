@@ -5,8 +5,8 @@ require './test/test_helper'
 class VirustotalAPIURLReportTest < Minitest::Test
   def setup
     @unscanned_url = 'http://www.unscanned.com'
-    @url     = 'http://www.google.com'
-    @api_key = 'testapikey'
+    @url           = 'http://www.google.com'
+    @api_key       = 'testapikey'
   end
 
   def test_class_exists
