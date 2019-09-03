@@ -16,7 +16,7 @@ class VirustotalAPIURLScanTest < Minitest::Test
     VCR.use_cassette('url_scan') do
       vturl_scan = VirustotalAPI::URLScan.scan(@url, @api_key)
 
-      assert vturl_scan.response.is_a?(Hash)
+      assert vturl_scan.report.is_a?(Hash)
     end
   end
 

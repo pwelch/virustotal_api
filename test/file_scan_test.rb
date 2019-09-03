@@ -16,7 +16,7 @@ class VirustotalAPIFileScanTest < Minitest::Test
     VCR.use_cassette('scan') do
       virustotal_scan = VirustotalAPI::FileScan.scan(@file_path, @api_key)
 
-      assert virustotal_scan.response.is_a?(Hash)
+      assert virustotal_scan.report.is_a?(Hash)
     end
   end
 
