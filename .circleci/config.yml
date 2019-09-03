@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/ruby:2.5.3-stretch
     steps:
@@ -16,4 +16,8 @@ jobs:
       - run:
           name: Run Tests
           command: bundle exec rake test
-
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
