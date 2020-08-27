@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.virustotal.com/api/v3/files/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.5.1p57
+      X-Apikey:
+      - testapikey
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.virustotal.com
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Cloud-Trace-Context:
+      - 58dbefadec2107a7b6ab2d92b416b41e
+      Date:
+      - Thu, 03 Sep 2020 08:23:00 GMT
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '112'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "error": {
+                "code": "WrongCredentialsError",
+                "message": "Wrong API key: testapikey"
+            }
+        }
+  recorded_at: Thu, 03 Sep 2020 08:23:00 GMT
+recorded_with: VCR 6.0.0

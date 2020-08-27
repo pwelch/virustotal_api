@@ -1,10 +1,14 @@
 # VirusTotal API Changelog
 
+## [0.5.0] - 2020-09-02
+
+* Full rework to support API V3.
+  * [@crondaemon](https://github.com/crondaemon) & [@jonnynux](https://github.com/jonnynux)
+
 ## [0.4.1] - 2019-09-04
 
 * Fixed Reponse Parsing
-  * [@jonnynux](https://github.com/jonnynux)
-  
+  * [@jonnynux](https://github.com/jonnynux) 
 
 ## [0.4.0] - 2019-07-23
 

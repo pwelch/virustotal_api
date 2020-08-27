@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable LineLength
 require './test/test_helper'
 
 class VirustotalAPIBaseTest < Minitest::Test
@@ -15,45 +14,26 @@ class VirustotalAPIBaseTest < Minitest::Test
 
   # Instance Method
   def test_api_uri_instance_method
-    base_uri = 'https://www.virustotal.com/vtapi/v2'
-    vt_base = VirustotalAPI::Base.new
+    base_uri = 'https://www.virustotal.com/api/v3'
+    vt_base = VirustotalAPI::Base.new(nil)
 
     assert vt_base.api_uri.is_a?(String)
-    assert vt_base.api_uri, base_uri
+    assert_equal base_uri, vt_base.api_uri
   end
 
   # Class Method
   def test_api_uri_class_method
-    base_uri = 'https://www.virustotal.com/vtapi/v2'
+    base_uri = 'https://www.virustotal.com/api/v3'
 
     assert VirustotalAPI::Base.api_uri.is_a?(String)
-    assert VirustotalAPI::Base.api_uri, base_uri
+    assert_equal base_uri, VirustotalAPI::Base.api_uri
   end
 
-  def test_parse_code_200
-    mock_response200 = Minitest::Mock.new
-    mock_response200.expect(:code, 200)
-    mock_response200.expect(:body, '{}')
-
-    assert VirustotalAPI::Base.parse(mock_response200), {}
-  end
-
-  def test_parse_code_204
-    mock_response204 = Minitest::Mock.new
-    mock_response204.expect(:code, 204)
-    mock_response204.expect(:body, '{}')
-
-    assert_raises VirustotalAPI::RateLimitError do
-      VirustotalAPI::Base.parse(mock_response204)
-    end
-  end
-
-  # Test using FileReport
   def test_exists?
-    VCR.use_cassette('report') do
-      virustotal_report = VirustotalAPI::FileReport.find(@sha256, @api_key)
+    VCR.use_cassette('file_find') do
+      virustotal_report = VirustotalAPI::File.find(@sha256, @api_key)
 
-      assert virustotal_report.exists?, true
+      assert virustotal_report.exists?
     end
   end
 end
