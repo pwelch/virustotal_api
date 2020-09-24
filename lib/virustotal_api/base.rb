@@ -39,7 +39,7 @@ module VirustotalAPI
       nil
     rescue RestClient::Unauthorized
       # Raise a custom exception not to expose the underlying
-      # HTTP client. 
+      # HTTP client.
       raise VirustotalAPI::Unauthorized
     end
 

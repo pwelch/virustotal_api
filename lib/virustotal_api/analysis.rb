@@ -7,6 +7,7 @@ module VirustotalAPI
   class Analysis < Base
     attr_reader :report
 
+    # rubocop:disable Lint/MissingSuper
     def initialize(report)
       @report = report
     end
@@ -20,3 +21,4 @@ module VirustotalAPI
     end
   end
 end
+# rubocop:enable Lint/MissingSuper
