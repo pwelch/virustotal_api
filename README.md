@@ -3,7 +3,6 @@
 Ruby Gem for [VirusTotal](https://www.virustotal.com) [V2 API](https://www.virustotal.com/en/documentation/public-api/)
 
 [![Gem Version](https://badge.fury.io/rb/virustotal_api.svg)](http://badge.fury.io/rb/virustotal_api)
-[![CircleCI](https://circleci.com/gh/pwelch/virustotal_api.svg?style=svg)](https://circleci.com/gh/pwelch/virustotal_api)
 
 ## Installation
 
