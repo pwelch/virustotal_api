@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/pwelch/virustotal_api'
   spec.license       = 'MIT'
 
-  spec.required_ruby_version = '>= 2.4'
+  spec.required_ruby_version = '>= 2.6'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -31,4 +31,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop', '~> 0.71'
   spec.add_development_dependency 'vcr', '~> 6.0', '>= 6.0.0'
   spec.add_development_dependency 'yard', '~> 0.9'
+  spec.add_development_dependency 'webmock', '~> 3.9'
 end
