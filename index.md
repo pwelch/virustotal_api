@@ -1,9 +1,11 @@
 # VirustotalAPI
 
-Ruby Gem for [VirusTotal](https://www.virustotal.com) [V2 API](https://www.virustotal.com/en/documentation/public-api/)
+Ruby Gem for [VirusTotal](https://www.virustotal.com) [V3 API](https://developers.virustotal.com/v3.0/reference).
+If you want the version 2, check out the gem versions up to [0.4.0](https://github.com/crondaemon/virustotal_api/tree/v0.4.0).
+
+![Ruby](https://github.com/pwelch/virustotal_api/workflows/Ruby/badge.svg)
 
 [![Gem Version](https://badge.fury.io/rb/virustotal_api.svg)](http://badge.fury.io/rb/virustotal_api)
-[![CircleCI](https://circleci.com/gh/pwelch/virustotal_api.svg?style=svg)](https://circleci.com/gh/pwelch/virustotal_api)
 
 ## Installation
 
@@ -27,7 +29,7 @@ VirusTotal only allows 4 queries per minute for their Public API. https://www.vi
 
 You will need a Private API Key if you require more queries per minute.
 
-### File Report
+### File Find
 
 ```ruby
 require 'virustotal_api'
@@ -35,7 +37,7 @@ require 'virustotal_api'
 sha256  = '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
 api_key = 'MY_API_KEY'
 
-vtreport = VirustotalAPI::FileReport.find(sha256, api_key)
+vtreport = VirustotalAPI::File.find(sha256, api_key)
 
 # Does the resource have any results?
 vtreport.exists?
@@ -43,14 +45,19 @@ vtreport.exists?
 
 # URL for File Report (if it exists)
 vtreport.report_url
-# => "https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1418032127/"
+# => "https://www.virustotal.com/api/v3/files/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
 
 # Report results (if they exist) are available via #report
-vtreport.report["scans"]["ClamAV"]
-# => {"detected"=>false, "version"=>"0.98.5.0", "result"=>nil, "update"=>"20141208"}
+vtreport.report['data']['attributes']['last_analysis_results']['ClamAV']
+# => {"category"=>"undetected", "engine_name"=>"ClamAV", "engine_update"=>"20200826",
+# "engine_version"=>"0.102.4.0", "method"=>"blacklist", "result"=>nil}
+
+# Check whether an Antivirus detected this sample or not
+vtreport.detected_by('ClamAV')
+# => false
 ```
 
-### File Scan
+### File Upload
 
 ```ruby
 require 'virustotal_api'
@@ -58,28 +65,21 @@ require 'virustotal_api'
 file    = '/path/to/file'
 api_key = 'MY_API_KEY'
 
-vtscan = VirustotalAPI::FileScan.scan(file, api_key)
+vtscan = VirustotalAPI::File.upload(file, api_key)
 
-# Scan ID of file
-vtscan.scan_id
+# Virustotal ID of file
+vtscan.id
 # => "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668"
 
 # Response results are available via #response
-vtscan.response
+vtscan.report
 # =>
-{
-  "scan_id"=>"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1419454668",
-  "sha1"=>"adc83b19e793491b1c6ea0fd8b46cd9f32e592fc",
-  "resource"=>"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-  "response_code"=>1,
-  "sha256"=>"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-  "permalink"=>"https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1419454668/",
-  "md5"=>"68b329da9893e34099c7d8ad5cb9c940",
-  "verbose_msg"=>"Scan request successfully queued, come back later for the report"
-}
+{"data"=>
+  {"id"=>"MTkxNDBmMjU4ZGY1OGZiYzZjNmU2ODcyMWNhYjhkZTM6MTU5ODUzMTE5OQ==",
+   "type"=>"analysis"}}
 ```
 
-### File Rescan
+### File Analyse
 
 ```ruby
 require 'virustotal_api'
@@ -87,25 +87,21 @@ require 'virustotal_api'
 sha256  = '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
 api_key = 'MY_API_KEY'
 
-vtrescan = VirustotalAPI::FileRescan.rescan(sha256, api_key)
+vtrescan = VirustotalAPI::File.analyse(sha256, api_key)
 
-# Rescan ID of file
-vtrescan.rescan_id
-# => "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1562684247"
+# Virustotal ID of file
+vtrescan.id
+# => "MTkxNDBmMjU4ZGY1OGZiYzZjNmU2ODcyMWNhYjhkZTM6MTU5ODUzMTE5OQ=="
 
 # Response results are available via #response
-vtrescan.response
+vtrescan.report
 # =>
-{
-  "permalink": "https://www.virustotal.com/file/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analysis/1562684247/",
-  "response_code": 1,
-  "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-  "resource": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
-  "scan_id": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b-1562684247"
-}
+{"data"=>
+  {"id"=>"MTkxNDBmMjU4ZGY1OGZiYzZjNmU2ODcyMWNhYjhkZTM6MTU5ODUzMTE5OQ==",
+   "type"=>"analysis"}}
 ```
 
-### URL Report
+### URL find
 
 ```ruby
 require 'virustotal_api'
@@ -113,7 +109,7 @@ require 'virustotal_api'
 url     = 'http://www.google.com'
 api_key = 'MY_API_KEY'
 
-vturl_report = VirustotalAPI::URLReport.find(url, api_key)
+vturl_report = VirustotalAPI::URL.find(url, api_key)
 
 # Does the resource have any results?
 vturl_report.exists?
@@ -121,14 +117,14 @@ vturl_report.exists?
 
 # URL for Report (if it exists)
 vturl_report.report_url
-# => "https://www.virustotal.com/url/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/analysis/1419457210/"
+# => "https://www.virustotal.com/api/v3/urls/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/"
 
 # Report results (if they exist) are available via #report
-vturl_report.report["scans"]["Opera"]
-# => {"detected"=>false, "result"=>"clean site"}
+vturl_report.report['data']['attributes']['last_analysis_results']['Avira']
+# => {"category"=>"harmless", "engine_name"=>"Avira", "method"=>"blacklist", "result"=>"clean"}
 ```
 
-### URL Scan
+### URL Upload
 
 ```ruby
 require 'virustotal_api'
@@ -136,27 +132,22 @@ require 'virustotal_api'
 url     = 'http://www.google.com'
 api_key = 'MY_API_KEY'
 
-vturl_scan = VirustotalAPI::URLScan.scan(url, api_key)
+vturl_scan = VirustotalAPI::URL.upload(url, api_key)
 
-# Scan ID of file
-vturl_scan.scan_id
-# => "dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1562751553"
+# Virustotal ID of file
+vturl_scan.id
+# => "u-dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1598531929"
 
 # Response results are available via #response
-vturl_scan.response
+vturl_scan.report
 # =>
-{
-  "permalink": "https://www.virustotal.com/url/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/analysis/1562751553/",
-  "resource": "http://www.google.com/",
-  "url": "http://www.google.com/",
-  "response_code": 1,
-  "scan_date": "2019-07-10 09:39:13",
-  "scan_id": "dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1562751553",
-  "verbose_msg": "Scan request successfully queued, come back later for the report"
-}
+{"data"=>
+  {"id"=>
+    "u-dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1598531929",
+   "type"=>"analysis"}}
 ```
 
-### IP Report
+### IP Find
 
 ```ruby
 require 'virustotal_api'
@@ -164,7 +155,7 @@ require 'virustotal_api'
 ip      = '8.8.8.8'
 api_key = 'MY_API_KEY'
 
-vtip_report = VirustotalAPI::IPReport.find(ip, api_key)
+vtip_report = VirustotalAPI::IP.find(ip, api_key)
 
 # Does the resource have any results?
 vtip_report.exists?
@@ -175,7 +166,7 @@ vtip_report.report
 # => Hash of report results
 ```
 
-### Domain Report
+### Domain Find
 
 ```ruby
 require 'virustotal_api'
@@ -183,7 +174,7 @@ require 'virustotal_api'
 domain  = 'virustotal.com'
 api_key = 'MY_API_KEY'
 
-vtdomain_report = VirustotalAPI::DomainReport.find(domain, api_key)
+vtdomain_report = VirustotalAPI::Domain.find(domain, api_key)
 
 # Does the resource have any results?
 vtdomain_report.exists?
@@ -199,6 +190,7 @@ vtdomain_report.report
 - [@postmodern](https://github.com/postmodern)
 - [@mkunkel](https://github.com/mkunkel)
 - [@jonnynux](https://github.com/jonnynux)
+- [@crondaemon](https://github.com/crondaemon/)
 
 ## Contributing
 
