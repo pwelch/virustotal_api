@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-require 'virustotal_api/domain_report'
-require 'virustotal_api/file_report'
-require 'virustotal_api/file_rescan'
-require 'virustotal_api/file_scan'
-require 'virustotal_api/ip_report'
-require 'virustotal_api/url_report'
-require 'virustotal_api/url_scan'
+require 'virustotal_api/analysis'
+require 'virustotal_api/domain'
+require 'virustotal_api/file'
+require 'virustotal_api/ip'
+require 'virustotal_api/url'
 require 'virustotal_api/uri'
 require 'virustotal_api/version'

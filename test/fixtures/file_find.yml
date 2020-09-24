@@ -1,0 +1,1236 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.virustotal.com/api/v3/files/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.5.1p57
+      X-Apikey:
+      - testapikey
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.virustotal.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Cloud-Trace-Context:
+      - 03407b05cfb2624364180a01ed7921cd
+      Date:
+      - Wed, 02 Sep 2020 14:02:33 GMT
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '45861'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "data": {
+                "attributes": {
+                    "autostart_locations": [
+                        {
+                            "entry": "",
+                            "location": "mock"
+                        },
+                        {
+                            "entry": "launchd.conf",
+                            "location": "Startup Scripts"
+                        },
+                        {
+                            "entry": " ",
+                            "location": " "
+                        },
+                        {
+                            "entry": "Trend Micro Toolbar",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "mhuntagent",
+                            "location": "Launch_Daemons"
+                        },
+                        {
+                            "entry": "Tampermonkey",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "LastPass: Free Password Manager",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Ace Script",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Webroot Password Manager",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "1Password extension (desktop app required)",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "QuickMark QR Code Extension",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "ZoneAlarm Anti-Phishing",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Webroot Password Manager",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "Tampermonkey",
+                            "location": "Chromium Add-ons"
+                        },
+                        {
+                            "entry": "Solid Savings",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "Astrmenda Search",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "",
+                            "location": "C:\\Windows\\Explorer.exe"
+                        },
+                        {
+                            "entry": "LyricsSay-1",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Advanced HTML for Gmail/Outlook/Office365",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Vosteran Search",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "CinemaP-1.9cV20.10",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Supreme Savings",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "AOL Toolbar",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "rc.server",
+                            "location": "Startup Scripts"
+                        },
+                        {
+                            "entry": "Browser Backgrounds",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "LastPass",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Motorola Connect",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Tampermonkey BETA",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Check Point SandBlast Agent for Browsers",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Trend Micro Toolbar",
+                            "location": "Chromium Add-ons"
+                        },
+                        {
+                            "entry": "LastPass",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "Nano Adblocker",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "",
+                            "location": "undefined"
+                        },
+                        {
+                            "entry": "923565845ab590c7d7fa8b6547b93748887497ab",
+                            "location": "Login Items"
+                        },
+                        {
+                            "entry": "Shutterfly Exporter",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Ripple Wallet",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "CinemaHd For Pro 2.4cV10.01",
+                            "location": "Opera Add-ons"
+                        },
+                        {
+                            "entry": "Tamil FM and Online Radios",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "M-Lab Measure",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "LastPass",
+                            "location": "Chromium Add-ons"
+                        },
+                        {
+                            "entry": "Tampermonkey",
+                            "location": "Opera Add-ons"
+                        },
+                        {
+                            "entry": "Foxtrick",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Weather Now",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Ace Stream Web Extension",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "CRM for Gmail",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Daily Horoscope",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "HD-Quality-3.1V15.12",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Kaspersky Password Manager",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "Easy  Deals",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Webroot",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Freeven pro",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Plus-HD-V1.6",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "MyBrowser 1.0.2V24.08",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Webroot Password Manager",
+                            "location": "Chromium Add-ons"
+                        },
+                        {
+                            "entry": "Adblock Super",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "SuperLyrics-1",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "SavingsApp",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "Savings Sidekick",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "Ask Toolbar for Firefox",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "HD-Quality-3.1V11.12",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "MyBrowser 1.0.2V16.09",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Astromenda Search Addon",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "StravistiX for Strava",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "CinPlus-2.4cV24.12",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Ace Stream Web Extension",
+                            "location": "Chromium Add-ons"
+                        },
+                        {
+                            "entry": "CyberLink YouCam WebLogin",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "HQ-Video-Pro-2.1cV30.11",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Save to Pocket",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Cinema Plus v6V23.07",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "PlusHD Cinema 2.1cV03.03",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Plus-HD-9.5",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "",
+                            "location": "HKLM/System/CurrentControlSet/Services/"
+                        },
+                        {
+                            "entry": "Adblock",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "TubeSaver-16",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "FoxTrick",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "HDQ-1.2cV26.12",
+                            "location": "Opera Add-ons"
+                        },
+                        {
+                            "entry": "CinePlus-1.44V09.11",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Shopping Sidekick",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "Feven 1.5",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "CinemaP-1.9cV31.07",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "CinemaPlus-4.5vV30.07",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Cinema_Plus_3.1rV28.10",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Coupon Companion Plugin",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "Plus-HD-2.6",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "CinemaP-1.9cV07.11",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "Plus-HD-9.3",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Cinema-Plus-1.2",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "CinemaP-1.3c",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Firefox OS 1.3 Simulator",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "Cinema PlusV17.09",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "LyricsFan-2",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "CinePlus-1.44V30.08",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "CinemaPlus_1.3dV13.05",
+                            "location": "Opera Add-ons"
+                        },
+                        {
+                            "entry": "Plus-HD-V1.6c",
+                            "location": "Mozilla Firefox Add-ons"
+                        },
+                        {
+                            "entry": "HDtubeV1.6V31.10",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Cinema PlusV26.03",
+                            "location": "Opera Add-ons"
+                        },
+                        {
+                            "entry": "HQ Video Pro 2.1cV16.06",
+                            "location": "Google Chrome Add-ons"
+                        },
+                        {
+                            "entry": "Plus-HD-9.6",
+                            "location": "Mozilla Firefox Add-ons"
+                        }
+                    ],
+                    "downloadable": true,
+                    "exiftool": {
+                        "FileType": "TXT",
+                        "FileTypeExtension": "txt",
+                        "LineCount": "1",
+                        "MIMEEncoding": "us-ascii",
+                        "MIMEType": "text/plain",
+                        "Newlines": "Unix LF",
+                        "WordCount": "0"
+                    },
+                    "first_submission_date": 1236257138,
+                    "last_analysis_date": 1599045062,
+                    "last_analysis_results": {
+                        "ALYac": {
+                            "category": "undetected",
+                            "engine_name": "ALYac",
+                            "engine_update": "20200902",
+                            "engine_version": "1.1.1.5",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "APEX": {
+                            "category": "type-unsupported",
+                            "engine_name": "APEX",
+                            "engine_update": "20200901",
+                            "engine_version": "6.66",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "AVG": {
+                            "category": "undetected",
+                            "engine_name": "AVG",
+                            "engine_update": "20200902",
+                            "engine_version": "18.4.3895.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Acronis": {
+                            "category": "type-unsupported",
+                            "engine_name": "Acronis",
+                            "engine_update": "20200806",
+                            "engine_version": "1.1.1.77",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Ad-Aware": {
+                            "category": "undetected",
+                            "engine_name": "Ad-Aware",
+                            "engine_update": "20200902",
+                            "engine_version": "3.0.16.117",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "AegisLab": {
+                            "category": "undetected",
+                            "engine_name": "AegisLab",
+                            "engine_update": "20200902",
+                            "engine_version": "4.2",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "AhnLab-V3": {
+                            "category": "undetected",
+                            "engine_name": "AhnLab-V3",
+                            "engine_update": "20200902",
+                            "engine_version": "3.18.1.10026",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Alibaba": {
+                            "category": "type-unsupported",
+                            "engine_name": "Alibaba",
+                            "engine_update": "20190527",
+                            "engine_version": "0.3.0.5",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Antiy-AVL": {
+                            "category": "undetected",
+                            "engine_name": "Antiy-AVL",
+                            "engine_update": "20200902",
+                            "engine_version": "3.0.0.1",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Arcabit": {
+                            "category": "undetected",
+                            "engine_name": "Arcabit",
+                            "engine_update": "20200902",
+                            "engine_version": "1.0.0.881",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Avast": {
+                            "category": "undetected",
+                            "engine_name": "Avast",
+                            "engine_update": "20200902",
+                            "engine_version": "18.4.3895.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Avast-Mobile": {
+                            "category": "type-unsupported",
+                            "engine_name": "Avast-Mobile",
+                            "engine_update": "20200902",
+                            "engine_version": "200902-00",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Avira": {
+                            "category": "undetected",
+                            "engine_name": "Avira",
+                            "engine_update": "20200902",
+                            "engine_version": "8.3.3.8",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Baidu": {
+                            "category": "undetected",
+                            "engine_name": "Baidu",
+                            "engine_update": "20190318",
+                            "engine_version": "1.0.0.2",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "BitDefender": {
+                            "category": "undetected",
+                            "engine_name": "BitDefender",
+                            "engine_update": "20200902",
+                            "engine_version": "7.2",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "BitDefenderTheta": {
+                            "category": "undetected",
+                            "engine_name": "BitDefenderTheta",
+                            "engine_update": "20200902",
+                            "engine_version": "7.2.37796.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Bkav": {
+                            "category": "undetected",
+                            "engine_name": "Bkav",
+                            "engine_update": "20200901",
+                            "engine_version": "1.3.0.9899",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "CAT-QuickHeal": {
+                            "category": "undetected",
+                            "engine_name": "CAT-QuickHeal",
+                            "engine_update": "20200902",
+                            "engine_version": "14.00",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "CMC": {
+                            "category": "undetected",
+                            "engine_name": "CMC",
+                            "engine_update": "20200902",
+                            "engine_version": "2.7.2019.1",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "ClamAV": {
+                            "category": "undetected",
+                            "engine_name": "ClamAV",
+                            "engine_update": "20200901",
+                            "engine_version": "0.102.4.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Comodo": {
+                            "category": "undetected",
+                            "engine_name": "Comodo",
+                            "engine_update": "20200728",
+                            "engine_version": "32668",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "CrowdStrike": {
+                            "category": "type-unsupported",
+                            "engine_name": "CrowdStrike",
+                            "engine_update": "20190702",
+                            "engine_version": "1.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Cybereason": {
+                            "category": "type-unsupported",
+                            "engine_name": "Cybereason",
+                            "engine_update": "20190616",
+                            "engine_version": "1.2.449",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Cylance": {
+                            "category": "type-unsupported",
+                            "engine_name": "Cylance",
+                            "engine_update": "20200902",
+                            "engine_version": "2.3.1.101",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Cynet": {
+                            "category": "undetected",
+                            "engine_name": "Cynet",
+                            "engine_update": "20200902",
+                            "engine_version": "4.0.0.24",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Cyren": {
+                            "category": "undetected",
+                            "engine_name": "Cyren",
+                            "engine_update": "20200902",
+                            "engine_version": "6.3.0.2",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "DrWeb": {
+                            "category": "undetected",
+                            "engine_name": "DrWeb",
+                            "engine_update": "20200902",
+                            "engine_version": "7.0.48.8080",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "ESET-NOD32": {
+                            "category": "undetected",
+                            "engine_name": "ESET-NOD32",
+                            "engine_update": "20200902",
+                            "engine_version": "21921",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Elastic": {
+                            "category": "type-unsupported",
+                            "engine_name": "Elastic",
+                            "engine_update": "20200831",
+                            "engine_version": "4.0.8",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Emsisoft": {
+                            "category": "undetected",
+                            "engine_name": "Emsisoft",
+                            "engine_update": "20200902",
+                            "engine_version": "2018.12.0.1641",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "F-Secure": {
+                            "category": "undetected",
+                            "engine_name": "F-Secure",
+                            "engine_update": "20200902",
+                            "engine_version": "12.0.86.52",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "FireEye": {
+                            "category": "undetected",
+                            "engine_name": "FireEye",
+                            "engine_update": "20200902",
+                            "engine_version": "32.36.1.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Fortinet": {
+                            "category": "undetected",
+                            "engine_name": "Fortinet",
+                            "engine_update": "20200902",
+                            "engine_version": "6.2.142.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "GData": {
+                            "category": "undetected",
+                            "engine_name": "GData",
+                            "engine_update": "20200902",
+                            "engine_version": "A:25.26854B:27.20024",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Ikarus": {
+                            "category": "undetected",
+                            "engine_name": "Ikarus",
+                            "engine_update": "20200902",
+                            "engine_version": "0.1.5.2",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Invincea": {
+                            "category": "undetected",
+                            "engine_name": "Invincea",
+                            "engine_update": "20200902",
+                            "engine_version": "1.0.1.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Jiangmin": {
+                            "category": "undetected",
+                            "engine_name": "Jiangmin",
+                            "engine_update": "20200902",
+                            "engine_version": "16.0.100",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "K7AntiVirus": {
+                            "category": "undetected",
+                            "engine_name": "K7AntiVirus",
+                            "engine_update": "20200902",
+                            "engine_version": "11.133.35137",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "K7GW": {
+                            "category": "undetected",
+                            "engine_name": "K7GW",
+                            "engine_update": "20200902",
+                            "engine_version": "11.133.35139",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Kaspersky": {
+                            "category": "undetected",
+                            "engine_name": "Kaspersky",
+                            "engine_update": "20200902",
+                            "engine_version": "15.0.1.13",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Kingsoft": {
+                            "category": "undetected",
+                            "engine_name": "Kingsoft",
+                            "engine_update": "20200902",
+                            "engine_version": "2013.8.14.323",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "MAX": {
+                            "category": "undetected",
+                            "engine_name": "MAX",
+                            "engine_update": "20200902",
+                            "engine_version": "2019.9.16.1",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Malwarebytes": {
+                            "category": "undetected",
+                            "engine_name": "Malwarebytes",
+                            "engine_update": "20200902",
+                            "engine_version": "3.6.4.335",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "MaxSecure": {
+                            "category": "undetected",
+                            "engine_name": "MaxSecure",
+                            "engine_update": "20200901",
+                            "engine_version": "1.0.0.1",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "McAfee": {
+                            "category": "undetected",
+                            "engine_name": "McAfee",
+                            "engine_update": "20200902",
+                            "engine_version": "6.0.6.653",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "MicroWorld-eScan": {
+                            "category": "undetected",
+                            "engine_name": "MicroWorld-eScan",
+                            "engine_update": "20200902",
+                            "engine_version": "14.0.409.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Microsoft": {
+                            "category": "undetected",
+                            "engine_name": "Microsoft",
+                            "engine_update": "20200902",
+                            "engine_version": "1.1.17400.5",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "NANO-Antivirus": {
+                            "category": "undetected",
+                            "engine_name": "NANO-Antivirus",
+                            "engine_update": "20200902",
+                            "engine_version": "1.0.134.25140",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Paloalto": {
+                            "category": "type-unsupported",
+                            "engine_name": "Paloalto",
+                            "engine_update": "20200902",
+                            "engine_version": "1.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Panda": {
+                            "category": "undetected",
+                            "engine_name": "Panda",
+                            "engine_update": "20200902",
+                            "engine_version": "4.6.4.2",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Qihoo-360": {
+                            "category": "undetected",
+                            "engine_name": "Qihoo-360",
+                            "engine_update": "20200902",
+                            "engine_version": "1.0.0.1120",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Rising": {
+                            "category": "undetected",
+                            "engine_name": "Rising",
+                            "engine_update": "20200902",
+                            "engine_version": "25.0.0.26",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "SUPERAntiSpyware": {
+                            "category": "undetected",
+                            "engine_name": "SUPERAntiSpyware",
+                            "engine_update": "20200828",
+                            "engine_version": "5.6.0.1032",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Sangfor": {
+                            "category": "undetected",
+                            "engine_name": "Sangfor",
+                            "engine_update": "20200814",
+                            "engine_version": "1.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "SentinelOne": {
+                            "category": "type-unsupported",
+                            "engine_name": "SentinelOne",
+                            "engine_update": "20200724",
+                            "engine_version": "4.4.0.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Sophos": {
+                            "category": "undetected",
+                            "engine_name": "Sophos",
+                            "engine_update": "20200902",
+                            "engine_version": "4.98.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Symantec": {
+                            "category": "undetected",
+                            "engine_name": "Symantec",
+                            "engine_update": "20200902",
+                            "engine_version": "1.12.0.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "SymantecMobileInsight": {
+                            "category": "type-unsupported",
+                            "engine_name": "SymantecMobileInsight",
+                            "engine_update": "20200813",
+                            "engine_version": "2.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "TACHYON": {
+                            "category": "undetected",
+                            "engine_name": "TACHYON",
+                            "engine_update": "20200902",
+                            "engine_version": "2020-09-02.02",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Tencent": {
+                            "category": "undetected",
+                            "engine_name": "Tencent",
+                            "engine_update": "20200902",
+                            "engine_version": "1.0.0.1",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "TotalDefense": {
+                            "category": "undetected",
+                            "engine_name": "TotalDefense",
+                            "engine_update": "20200902",
+                            "engine_version": "37.1.62.1",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "TrendMicro": {
+                            "category": "undetected",
+                            "engine_name": "TrendMicro",
+                            "engine_update": "20200902",
+                            "engine_version": "11.0.0.1006",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "TrendMicro-HouseCall": {
+                            "category": "undetected",
+                            "engine_name": "TrendMicro-HouseCall",
+                            "engine_update": "20200902",
+                            "engine_version": "10.0.0.1040",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Trustlook": {
+                            "category": "type-unsupported",
+                            "engine_name": "Trustlook",
+                            "engine_update": "20200902",
+                            "engine_version": "1.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "VBA32": {
+                            "category": "undetected",
+                            "engine_name": "VBA32",
+                            "engine_update": "20200902",
+                            "engine_version": "4.4.1",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "VIPRE": {
+                            "category": "undetected",
+                            "engine_name": "VIPRE",
+                            "engine_update": "20200902",
+                            "engine_version": "86384",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "ViRobot": {
+                            "category": "undetected",
+                            "engine_name": "ViRobot",
+                            "engine_update": "20200902",
+                            "engine_version": "2014.3.20.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Webroot": {
+                            "category": "type-unsupported",
+                            "engine_name": "Webroot",
+                            "engine_update": "20200902",
+                            "engine_version": "1.0.0.403",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Yandex": {
+                            "category": "undetected",
+                            "engine_name": "Yandex",
+                            "engine_update": "20200901",
+                            "engine_version": "5.5.2.24",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Zillya": {
+                            "category": "undetected",
+                            "engine_name": "Zillya",
+                            "engine_update": "20200901",
+                            "engine_version": "2.0.0.4166",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "ZoneAlarm": {
+                            "category": "undetected",
+                            "engine_name": "ZoneAlarm",
+                            "engine_update": "20200902",
+                            "engine_version": "1.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "Zoner": {
+                            "category": "undetected",
+                            "engine_name": "Zoner",
+                            "engine_update": "20200901",
+                            "engine_version": "0.0.0.0",
+                            "method": "blacklist",
+                            "result": null
+                        },
+                        "eGambit": {
+                            "category": "type-unsupported",
+                            "engine_name": "eGambit",
+                            "engine_update": "20200902",
+                            "engine_version": null,
+                            "method": "blacklist",
+                            "result": null
+                        }
+                    },
+                    "last_analysis_stats": {
+                        "confirmed-timeout": 0,
+                        "failure": 0,
+                        "harmless": 0,
+                        "malicious": 0,
+                        "suspicious": 0,
+                        "timeout": 0,
+                        "type-unsupported": 14,
+                        "undetected": 59
+                    },
+                    "last_modification_date": 1599055327,
+                    "last_submission_date": 1599045062,
+                    "magic": "very short file (no magic)",
+                    "md5": "68b329da9893e34099c7d8ad5cb9c940",
+                    "meaningful_name": "standalone-framework.js",
+                    "names": [
+                        "432894.js",
+                        "logo_image.php",
+                        "download-redtube-videos-de-2",
+                        "index.html",
+                        "missouri-payday-loans-online-2",
+                        "real-hook-up-sites",
+                        "wjrfwuxtcflts2gxbgddk0flt0n6a3vtwkrfshdqy1yrtfbcnnrksw5qa01ia243nm5wngxbsflyshzxrglawwvjzwfxdjv1z3z5qzzeyjrtq1hmcgpdvmy4ymy3cdd3rm95oudrmwjdq3bza1nmy3j2ylz5tzfrbddyddngtcs=",
+                        "index.php",
+                        "pjx",
+                        "cecc",
+                        "/var/www/clean-mx/virusesevidence/output.124266458.txt",
+                        "lg.php",
+                        "174e",
+                        "SGF-1000-Fact-Sheet.pdf",
+                        "mkbnetbankar.hu",
+                        "playing",
+                        "internet-brides-2",
+                        "stanislav-kravcov",
+                        "c+++dlls+in+labview",
+                        "psa",
+                        "rlz",
+                        "12",
+                        "onlineeduhelp",
+                        "bms.exe",
+                        "fs.html)",
+                        "error_404.html",
+                        "cbd-oildiscount-website",
+                        "index.htm",
+                        "20141106144718814148788.doc",
+                        "education-school-tips",
+                        "educational-innovation",
+                        "camcrush-webcam-chat-rooms-2",
+                        "bgclive-review-2",
+                        "ARLConsulSetup.exe",
+                        "OO",
+                        "proceso.php",
+                        "bJxzZMKUFX",
+                        "edutrik",
+                        "annotatedbibliography",
+                        "/var/www/clean-mx/virusesevidence/output.124357766.txt",
+                        "xkhqaghyIRApCdjid",
+                        "classified-hookup-sites-2",
+                        "excelz",
+                        "6yFdvLUwfxM7PhxJHy",
+                        "JMRGBOPS2DLCREVOLUTION",
+                        "pornporn.online",
+                        "wxYee",
+                        "super-monopoly-money-slot-loophole",
+                        "edutrics",
+                        "pxre-ns-297",
+                        "D0hEXxcZIagKUzDIp",
+                        "sound_e",
+                        "68b329da9893e34099c7d8ad5cb9c940.js",
+                        "feature-03",
+                        "smrd.htm",
+                        "main05.php",
+                        "main02.php",
+                        "main01.php",
+                        "MiqrGsUEOVy4ijhIX",
+                        "location",
+                        "getkey.php",
+                        "/var/www/clean-mx/virusesevidence/output.124408803.txt",
+                        "MainLink.do",
+                        "q3FDOwcVQhXwwBhPvFZ",
+                        "854a636e94caea74b94de7d70b432476.csv",
+                        "edu",
+                        "fzn",
+                        "top-custom-writers",
+                        "essaytips",
+                        "KTU84Q)&v=3&latitude=0.0&longitude=0.0&um5=1d1c54240f4e8e173862433d29a52ca5&o1=e8ff46a1bde24167e4cc614c686c7b18b222de1f",
+                        "tcr6atzyle9c_4o0v4h-495844678765",
+                        "interracial-dating-central-dating-2",
+                        "light_image",
+                        "msg.jpg",
+                        "false",
+                        "gs10h51fg16p_oggx8swk2m",
+                        "new-jersey-governor-signs-athletics-betting-42",
+                        "before-you-are-left-behind-what-you-have-to-do-to",
+                        "thinking-about-core-aspects-of-russiansbrides",
+                        "almost-all-important-online-casino-companies",
+                        "help-with-python-homework",
+                        "paper-writing-tips",
+                        "54805244615",
+                        "database.txt",
+                        "d0%EF%BF%BD%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F:%D0%9C.%D0%92%D0%B8%D0%B4%D0%B5%D0%BE-%D0%AD%D0%BB%D1%8C%D0%B4%D0%BE%D1%80%D0%B0%D0%B4%D0%BE",
+                        "m0uhxhf6tpgspmzi",
+                        "analytics.php",
+                        "stock",
+                        "k.php",
+                        "zLykJ-ETE7liAemnpIGW_qgDQuEJLY-Ye8",
+                        "/var/www/clean-mx/virusesevidence/output.124529869.txt",
+                        "dl.php",
+                        "authorization.css",
+                        "t.php",
+                        "M9Spglia8HrDzf3DSr",
+                        "777.freshteens.site",
+                        "main03.php",
+                        "404.html",
+                        "20200808",
+                        "test"
+                    ],
+                    "nsrl_info": {
+                        "filenames": [
+                            "NOOP.RULES, RESOLV.CONF",
+                            "extralibs.ld",
+                            "Recorder.bat, admin.passwd",
+                            "EXTRALIB.LD, NOOP.RUL",
+                            "CTX, HMETOPMG, NOOP.RUL, PMGRP, PMGSEG",
+                            "DISK_1, DISK_2",
+                            "disk_1, disk_2, disk_3",
+                            "DUMMY.MPG",
+                            "NNTPSERV, NOOP.RUL, UUCP_UC0.M4",
+                            "BJC820",
+                            "GSYSTAG.FON",
+                            "AT.DEN, EXTRALIB.LD",
+                            "EXTRALIBS.LD, GSYSTAG.FON",
+                            "noop.rules",
+                            "certify",
+                            "master.admin.conf",
+                            "EXTRALIB.LD",
+                            "_relops_template.h, setupserver_UNIX_SOLSG.ini",
+                            "PMGSEG",
+                            "2040, 2040.dump, dat, pidfile"
+                        ],
+                        "products": [
+                            "Linux (Corel Corporation)",
+                            "MySQL (NuSphere Corporation)",
+                            "Tivoli Manager (Tivoli)",
+                            "SunSolve (Sun Microsystems)",
+                            "Solaris (Sun Microsystems)",
+                            "Solaris Server (Sun Microsystems)",
+                            "OmniSwitch MPM (Xylan Corporation)",
+                            "Omni S/R MPX (Xylan Corporation)",
+                            "Oracle Video Server (Oracle)",
+                            "Linux Developers Resource (InfoMagic Inc.)",
+                            "Ultra Pack (Sun Microsystems)",
+                            "Windows 2000 Server Resource Kit (Microsoft)",
+                            "Mac OS X (Apple Computer Inc.)",
+                            "Platforms, Servers, Applications (Microsoft)",
+                            "Applications, Platforms, Servers (Microsoft)",
+                            "Red Hat Linux (Red Hat Software Inc.)",
+                            "Windows XP (Microsoft)",
+                            "Windows DDks (Microsoft)",
+                            "Windows 2000 Versions (Microsoft)",
+                            "Sun ONE Advantage Software (Sun Microsystems)"
+                        ]
+                    },
+                    "reputation": -539,
+                    "sha1": "adc83b19e793491b1c6ea0fd8b46cd9f32e592fc",
+                    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+                    "size": 1,
+                    "ssdeep": "3:v:v",
+                    "tags": [
+                        "nsrl",
+                        "attachment",
+                        "trusted",
+                        "via-tor"
+                    ],
+                    "times_submitted": 12306,
+                    "total_votes": {
+                        "harmless": 32,
+                        "malicious": 93
+                    },
+                    "trusted_verdict": {
+                        "filename": "standalone-framework.js",
+                        "generator": "Microsoft Corporation",
+                        "organization": "Microsoft Corporation",
+                        "verdict": "goodware"
+                    },
+                    "type_description": "unknown",
+                    "unique_sources": 964
+                },
+                "id": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+                "links": {
+                    "self": "https://www.virustotal.com/api/v3/files/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+                },
+                "type": "file"
+            }
+        }
+    http_version: 
+  recorded_at: Wed, 02 Sep 2020 14:02:33 GMT
+recorded_with: VCR 5.0.0

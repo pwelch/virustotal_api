@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 module VirustotalAPI
-  VERSION = '0.4.1'
+  # The GEM version
+  VERSION = '0.5.0'
 end

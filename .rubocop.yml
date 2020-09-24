@@ -7,7 +7,7 @@ AllCops:
 Style/StringLiterals:
   Enabled: true
 
-Style/UnneededPercentQ:
+Style/RedundantPercentQ:
   Enabled: true
 
 # Disabled Checks
@@ -20,13 +20,10 @@ Style/PercentLiteralDelimiters:
 Style/RegexpLiteral:
   Enabled: false
 
-Style/BracesAroundHashParameters:
-  Enabled: false
-
 Lint/MissingCopEnableDirective:
   Exclude:
     - 'test/base_test.rb'
 
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   Exclude:
     - 'lib/virustotal_api/ip_report.rb'

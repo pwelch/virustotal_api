@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 module VirustotalAPI
-  URI = 'https://www.virustotal.com/vtapi/v2'
+  # The API base URI
+  URI = 'https://www.virustotal.com/api/v3'
 end
