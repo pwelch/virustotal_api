@@ -4,6 +4,7 @@
 
 * Full rework to support API V3.
   * [@crondaemon](https://github.com/crondaemon) & [@jonnynux](https://github.com/jonnynux)
+* Move to Ruby 2.6 for minimum Ruby version
 
 ## [0.4.1] - 2019-09-04
 
