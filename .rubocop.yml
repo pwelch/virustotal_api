@@ -1,6 +1,7 @@
 # This is the configuration used to check the rubocop source code.
 
 AllCops:
+  NewCops: enable
   Exclude:
     - 'test/fixtures/*'
 
@@ -27,3 +28,12 @@ Lint/MissingCopEnableDirective:
 Naming/MethodParameterName:
   Exclude:
     - 'lib/virustotal_api/ip_report.rb'
+
+Layout/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Gemspec/RequiredRubyVersion:
+  Enabled: false

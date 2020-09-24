@@ -28,8 +28,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest', '~> 5.14', '>= 5.14.1'
   spec.add_development_dependency 'pry', '~> 0.13.1'
   spec.add_development_dependency 'rake', '~> 12.3'
-  spec.add_development_dependency 'rubocop', '~> 0.71'
+  spec.add_development_dependency 'rubocop', '~> 0.91'
   spec.add_development_dependency 'vcr', '~> 6.0', '>= 6.0.0'
-  spec.add_development_dependency 'yard', '~> 0.9'
   spec.add_development_dependency 'webmock', '~> 3.9'
+  spec.add_development_dependency 'yard', '~> 0.9'
 end

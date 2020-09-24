@@ -7,8 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  test:
-
+  Test:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,5 +20,7 @@ jobs:
         ruby-version: 2.6
     - name: Install dependencies
       run: bundle install
+    - name: Lint
+      run: bundle exec rake rubocop
     - name: Run tests
       run: bundle exec rake

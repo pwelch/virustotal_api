@@ -3,6 +3,8 @@
 Ruby Gem for [VirusTotal](https://www.virustotal.com) [V3 API](https://developers.virustotal.com/v3.0/reference).
 If you want the version 2, check out the gem versions up to [0.4.0](https://github.com/crondaemon/virustotal_api/tree/v0.4.0).
 
+![Ruby](https://github.com/pwelch/virustotal_api/workflows/Ruby/badge.svg)
+
 [![Gem Version](https://badge.fury.io/rb/virustotal_api.svg)](http://badge.fury.io/rb/virustotal_api)
 
 ## Installation
