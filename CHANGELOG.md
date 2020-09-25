@@ -1,5 +1,10 @@
 # VirusTotal API Changelog
 
+## [0.5.1] - 2020-10-06
+
+* Downgrade ruby requirement to 2.5.
+  * [@crondaemon](https://github.com/crondaemon)
+
 ## [0.5.0] - 2020-09-02
 
 * Full rework to support API V3.
