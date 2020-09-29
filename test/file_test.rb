@@ -31,6 +31,9 @@ class VirustotalAPIFileTest < Minitest::Test
 
       assert virustotal_report.report_url.is_a?(String)
       assert_equal permalink, virustotal_report.report_url
+      assert virustotal_report.detected_by('Avira')
+      assert !virustotal_report.detected_by('Acronis')
+      assert !virustotal_report.detected_by('Yeyeyeye') # not present in file
     end
   end
 

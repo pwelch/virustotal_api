@@ -50,7 +50,7 @@ module VirustotalAPI
     # @param [String] engine The engine to check.
     # @return [Boolean] true if detected
     def detected_by(engine)
-      report['data']['attributes']['last_analysis_results'][engine]['category'] == 'harmless'
+      report&.dig('data', 'attributes', 'last_analysis_results', engine, 'category') == 'malicious'
     end
   end
 end
