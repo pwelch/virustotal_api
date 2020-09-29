@@ -36,7 +36,7 @@ module VirustotalAPI
       )
       JSON.parse(response.body)
     rescue RestClient::NotFound
-      nil
+      {}
     rescue RestClient::Unauthorized
       # Raise a custom exception not to expose the underlying
       # HTTP client.

@@ -43,7 +43,7 @@ class VirustotalAPIURLReportTest < Minitest::Test
     VCR.use_cassette('unscanned_url_find') do
       vturl_report = VirustotalAPI::URL.find(@unscanned_url, @api_key)
 
-      assert_nil vturl_report.report
+      assert_empty vturl_report.report
     end
   end
 

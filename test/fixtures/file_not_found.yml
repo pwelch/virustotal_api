@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.virustotal.com/api/v3/files/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.5.1p57
+      X-Apikey:
+      - testapikey
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.virustotal.com
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Cloud-Trace-Context:
+      - 1530c5d92ceea7ca966597807f154284
+      Date:
+      - Mon, 28 Sep 2020 16:25:32 GMT
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '130'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "error": {
+                "code": "NotFoundError",
+                "message": "File \"01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b\" not found"
+            }
+        }
+    http_version: 
+  recorded_at: Mon, 28 Sep 2020 16:25:32 GMT
+recorded_with: VCR 5.0.0

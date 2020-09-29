@@ -36,4 +36,12 @@ class VirustotalAPIBaseTest < Minitest::Test
       assert virustotal_report.exists?
     end
   end
+
+  def test_not_exists?
+    VCR.use_cassette('file_not_found') do
+      virustotal_report = VirustotalAPI::File.find(@sha256, @api_key)
+
+      assert !virustotal_report.exists?
+    end
+  end
 end
