@@ -20,4 +20,12 @@ class RateLimitErrorTest < Minitest::Test
       end
     end
   end
+
+  def test_rate_limit
+    VCR.use_cassette('file_rate_limit') do
+      assert_raises VirustotalAPI::RateLimitError do
+        VirustotalAPI::File.analyse(@sha256, @api_key)
+      end
+    end
+  end
 end
