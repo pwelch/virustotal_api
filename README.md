@@ -185,6 +185,44 @@ vtdomain_report.report
 # => Hash of report results
 ```
 
+### User Find
+
+```ruby
+require 'virustotal_api'
+
+user_key  = 'user_key' # user_id or api_key
+api_key = 'MY_API_KEY'
+
+vtuser_report = VirustotalAPI::User.find(user_key, api_key)
+
+# Does the resource have any results?
+vtuser_report.exists?
+# => true
+
+# Report results (if they exist) are available via #report
+vtuser_report.report
+# => Hash of report results
+```
+
+### Group Find
+
+```ruby
+require 'virustotal_api'
+
+group_id  = 'GROUP_id'
+api_key = 'MY_API_KEY'
+
+vtgroup_report = VirustotalAPI::Group.find(group_id, api_key)
+
+# Does the resource have any results?
+vtgroup_report.exists?
+# => true
+
+# Report results (if they exist) are available via #report
+vtgroup_report.report
+# => Hash of report results
+```
+
 ## Contributors
 
 - [@postmodern](https://github.com/postmodern)

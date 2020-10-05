@@ -1,0 +1,213 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.virustotal.com/api/v3/users/testapikey
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.5.1p57
+      X-Apikey:
+      - testapikey
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.virustotal.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Cloud-Trace-Context:
+      - 4ad711d6d44ea44146d4c06cb76589b1
+      Date:
+      - Mon, 05 Oct 2020 10:19:46 GMT
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '5145'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "data": {
+                "attributes": {
+                    "apikey": "testapikey",
+                    "email": "granville@okeefehomenick.co",
+                    "first_name": "Valdo",
+                    "has_2fa": false,
+                    "last_login": 1601883978,
+                    "last_name": "Donati",
+                    "preferences": {
+                        "ui": {
+                            "last_read_notification_date": 1599481553
+                        }
+                    },
+                    "privileges": {
+                        "cases": {
+                            "granted": false
+                        },
+                        "click_to_accept": {
+                            "granted": false
+                        },
+                        "creditcards": {
+                            "granted": false
+                        },
+                        "dogfooder": {
+                            "granted": false
+                        },
+                        "downloads-tier-1": {
+                            "granted": false
+                        },
+                        "downloads-tier-2": {
+                            "granted": false
+                        },
+                        "file-behaviour-feed": {
+                            "granted": false
+                        },
+                        "file-feed": {
+                            "granted": false
+                        },
+                        "file-feed-without-av-results": {
+                            "granted": false
+                        },
+                        "intelligence": {
+                            "granted": false
+                        },
+                        "intelligence-search-tier-1": {
+                            "granted": false
+                        },
+                        "intelligence-search-tier-2": {
+                            "granted": false
+                        },
+                        "intelligence-search-tier-3": {
+                            "granted": false
+                        },
+                        "monitor": {
+                            "granted": false
+                        },
+                        "monitor-partner": {
+                            "granted": false
+                        },
+                        "private": {
+                            "granted": false
+                        },
+                        "retrohunt-tier-1": {
+                            "granted": false
+                        },
+                        "retrohunt-tier-2": {
+                            "granted": false
+                        },
+                        "retrohunt-tier-3": {
+                            "granted": false
+                        },
+                        "sales-staff": {
+                            "granted": false
+                        },
+                        "staff": {
+                            "granted": false
+                        },
+                        "url-feed": {
+                            "granted": false
+                        },
+                        "vtalerts": {
+                            "granted": false
+                        },
+                        "vtdiff-api": {
+                            "granted": false
+                        },
+                        "vtdiff-ui": {
+                            "granted": false
+                        },
+                        "vtgrep": {
+                            "granted": false
+                        },
+                        "widget": {
+                            "granted": false
+                        }
+                    },
+                    "profile_phrase": "",
+                    "quotas": {
+                        "api_requests_daily": {
+                            "allowed": 5760,
+                            "used": 102
+                        },
+                        "api_requests_hourly": {
+                            "allowed": 240,
+                            "used": 0
+                        },
+                        "api_requests_monthly": {
+                            "allowed": 1000000000,
+                            "used": 105
+                        },
+                        "cases_creation_monthly": {
+                            "allowed": 20,
+                            "used": 0
+                        },
+                        "intelligence_downloads_monthly": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "intelligence_graphs_private": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "intelligence_hunting_rules": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "intelligence_retrohunt_jobs_monthly": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "intelligence_searches_monthly": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "intelligence_vtdiff_creation_monthly": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "monitor_storage_bytes": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "monitor_storage_files": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "monitor_uploaded_bytes": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "monitor_uploaded_files": {
+                            "allowed": 0,
+                            "used": 0
+                        }
+                    },
+                    "reputation": 1,
+                    "status": "active",
+                    "user_since": 1512986169
+                },
+                "id": "granville",
+                "links": {
+                    "self": "https://www.virustotal.com/api/v3/users/granville"
+                },
+                "type": "user"
+            }
+        }
+    http_version: 
+  recorded_at: Mon, 05 Oct 2020 10:19:46 GMT
+recorded_with: VCR 5.0.0
