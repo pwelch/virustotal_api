@@ -1,5 +1,13 @@
 # VirusTotal API Changelog
 
+## [0.5.2] - 2020-10-06
+
+* Fix Fix exists? check
+* Fix detected_by for File
+* Fix RateLimitError
+* Added User and Group API
+  * [@jonnynux](https://github.com/jonnynux)
+
 ## [0.5.1] - 2020-10-06
 
 * Downgrade ruby requirement to 2.5.
@@ -7,7 +15,7 @@
 
 ## [0.5.0] - 2020-09-02
 
-* Full rework to support API V3.
+* Full rework to support API V3 [#30](https://github.com/pwelch/virustotal_api/pull/30)
   * [@crondaemon](https://github.com/crondaemon) & [@jonnynux](https://github.com/jonnynux)
 * Move to Ruby 2.6 for minimum Ruby version
 
