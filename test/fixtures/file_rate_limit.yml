@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.virustotal.com/api/v3/files/01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b/analyse
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.5.1p57
+      X-Apikey:
+      - testapikey
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.virustotal.com
+  response:
+    status:
+      code: 429
+      message: Too Many Requests
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Cloud-Trace-Context:
+      - 478e4eb97aa48d5b286e7e4b3aa67ef6
+      Date:
+      - Wed, 30 Sep 2020 15:15:30 GMT
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '98'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "error": {
+                "code": "QuotaExceededError",
+                "message": "Quota exceeded"
+            }
+        }
+    http_version: 
+  recorded_at: Wed, 30 Sep 2020 15:15:30 GMT
+recorded_with: VCR 5.0.0

@@ -1,0 +1,216 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.virustotal.com/api/v3/groups/GROUP_us
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.5.1p57
+      X-Apikey:
+      - testapikey
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.virustotal.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Cloud-Trace-Context:
+      - 424b5968185466d45e93db7cd34f7055
+      Date:
+      - Mon, 05 Oct 2020 14:16:58 GMT
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '5487'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "data": {
+                "attributes": {
+                    "agreement_company_address": "3582  White River Way, Farmington, UT 84025",
+                    "agreement_company_country": "US",
+                    "agreement_company_name": "GROUP inc",
+                    "agreement_signatory": "Valdo Donati",
+                    "agreement_signatory_email": "granville@okeefehomenick.co",
+                    "agreement_signatory_title": "mr",
+                    "agreement_signed_date": 1580891744,
+                    "country": "USA",
+                    "country_iso": "US",
+                    "domain_name": "okeefehomenick.co",
+                    "industry": "Communications",
+                    "lock_users_api_quota_group": true,
+                    "organization": "GROUP inc",
+                    "organization_legal_name": "GROUP inc",
+                    "privileges": {
+                        "cases": {
+                            "granted": false
+                        },
+                        "click_to_accept": {
+                            "granted": true
+                        },
+                        "creditcards": {
+                            "granted": false
+                        },
+                        "dogfooder": {
+                            "granted": false
+                        },
+                        "downloads-tier-1": {
+                            "granted": false
+                        },
+                        "downloads-tier-2": {
+                            "expiration_date": 1625011200,
+                            "granted": true
+                        },
+                        "file-behaviour-feed": {
+                            "granted": false
+                        },
+                        "file-feed": {
+                            "granted": false
+                        },
+                        "file-feed-without-av-results": {
+                            "granted": false
+                        },
+                        "intelligence": {
+                            "expiration_date": 1625011200,
+                            "granted": true
+                        },
+                        "intelligence-search-tier-1": {
+                            "granted": false
+                        },
+                        "intelligence-search-tier-2": {
+                            "granted": false
+                        },
+                        "intelligence-search-tier-3": {
+                            "granted": false
+                        },
+                        "monitor": {
+                            "granted": false
+                        },
+                        "monitor-partner": {
+                            "granted": false
+                        },
+                        "private": {
+                            "expiration_date": 1625011200,
+                            "granted": true
+                        },
+                        "retrohunt-tier-1": {
+                            "granted": false
+                        },
+                        "retrohunt-tier-2": {
+                            "granted": false
+                        },
+                        "retrohunt-tier-3": {
+                            "granted": false
+                        },
+                        "sales-staff": {
+                            "granted": false
+                        },
+                        "staff": {
+                            "granted": false
+                        },
+                        "url-feed": {
+                            "granted": false
+                        },
+                        "vtalerts": {
+                            "granted": false
+                        },
+                        "vtdiff-api": {
+                            "granted": false
+                        },
+                        "vtdiff-ui": {
+                            "granted": false
+                        },
+                        "vtgrep": {
+                            "granted": false
+                        },
+                        "widget": {
+                            "granted": false
+                        }
+                    },
+                    "quota_usage_by_user": {},
+                    "quotas": {
+                        "api_requests_daily": {
+                            "allowed": 30000,
+                            "used": 1
+                        },
+                        "api_requests_hourly": {
+                            "allowed": 1800000,
+                            "used": 0
+                        },
+                        "api_requests_monthly": {
+                            "allowed": 1000000000,
+                            "used": 15
+                        },
+                        "cases_creation_monthly": {
+                            "allowed": 20,
+                            "used": 0
+                        },
+                        "intelligence_downloads_monthly": {
+                            "allowed": 15000,
+                            "used": 0
+                        },
+                        "intelligence_graphs_private": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "intelligence_hunting_rules": {
+                            "allowed": 25,
+                            "used": 3
+                        },
+                        "intelligence_retrohunt_jobs_monthly": {
+                            "allowed": 5,
+                            "used": 0
+                        },
+                        "intelligence_searches_monthly": {
+                            "allowed": 15000,
+                            "used": 41
+                        },
+                        "intelligence_vtdiff_creation_monthly": {
+                            "allowed": 100000000,
+                            "used": 0
+                        },
+                        "monitor_storage_bytes": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "monitor_storage_files": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "monitor_uploaded_bytes": {
+                            "allowed": 0,
+                            "used": 0
+                        },
+                        "monitor_uploaded_files": {
+                            "allowed": 0,
+                            "used": 0
+                        }
+                    }
+                },
+                "id": "GROUP_us",
+                "links": {
+                    "self": "https://www.virustotal.com/api/v3/groups/GROUP_us"
+                },
+                "type": "group"
+            }
+        }
+    http_version: 
+  recorded_at: Mon, 05 Oct 2020 14:16:58 GMT
+recorded_with: VCR 5.0.0

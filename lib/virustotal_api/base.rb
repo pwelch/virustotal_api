@@ -36,11 +36,15 @@ module VirustotalAPI
       )
       JSON.parse(response.body)
     rescue RestClient::NotFound
-      nil
+      {}
     rescue RestClient::Unauthorized
       # Raise a custom exception not to expose the underlying
       # HTTP client.
       raise VirustotalAPI::Unauthorized
+    rescue RestClient::TooManyRequests
+      # Raise a custom exception not to expose the underlying
+      # HTTP client.
+      raise VirustotalAPI::RateLimitError
     end
 
     # @return [String] string of API URI instance method
