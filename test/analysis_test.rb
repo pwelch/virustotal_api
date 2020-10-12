@@ -11,13 +11,16 @@ class VirustotalAPIAnalysisTest < Minitest::Test
   def test_todo
     VCR.use_cassette('url_find') do
       vtreport = VirustotalAPI::URL.find(@url, @api_key)
+
       @id = vtreport.id
-      assert @id
+      assert @id.is_a?(String)
     end
 
     VCR.use_cassette('analysis') do
       analysis = VirustotalAPI::Analysis.find(@id, @api_key)
+
       assert analysis.exists?
+      assert analysis.id.is_a?(String)
     end
   end
 end

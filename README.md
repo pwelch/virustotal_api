@@ -117,7 +117,7 @@ vturl_report.exists?
 
 # URL for Report (if it exists)
 vturl_report.report_url
-# => "https://www.virustotal.com/api/v3/urls/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/"
+# => "https://www.virustotal.com/api/v3/urls/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf"
 
 # Report results (if they exist) are available via #report
 vturl_report.report['data']['attributes']['last_analysis_results']['Avira']
@@ -161,6 +161,10 @@ vtip_report = VirustotalAPI::IP.find(ip, api_key)
 vtip_report.exists?
 # => true
 
+# URL for Report (if it exists)
+vtip_report.report_url
+# => "https://www.virustotal.com/api/v3/ip_addresses/8.8.8.8"
+
 # Report results (if they exist) are available via #report
 vtip_report.report
 # => Hash of report results
@@ -179,6 +183,10 @@ vtdomain_report = VirustotalAPI::Domain.find(domain, api_key)
 # Does the resource have any results?
 vtdomain_report.exists?
 # => true
+
+# URL for Report (if it exists)
+vtdomain_report.report_url
+# => "https://www.virustotal.com/api/v3/domains/virustotal.com"
 
 # Report results (if they exist) are available via #report
 vtdomain_report.report
