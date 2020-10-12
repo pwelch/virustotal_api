@@ -5,11 +5,6 @@ require_relative 'base'
 module VirustotalAPI
   # A class for '/domains' API
   class Domain < Base
-    # rubocop:disable Lint/UselessMethodDefinition
-    def initialize(report)
-      super(report)
-    end
-
     # Find a domain.
     #
     # @param [String] domain The domain to search
@@ -21,4 +16,3 @@ module VirustotalAPI
     end
   end
 end
-# rubocop:enable Lint/UselessMethodDefinition

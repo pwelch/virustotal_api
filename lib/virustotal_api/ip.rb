@@ -5,11 +5,6 @@ require_relative 'base'
 module VirustotalAPI
   # A class for '/ip_addresses' API
   class IP < Base
-    # rubocop:disable Lint/UselessMethodDefinition
-    def initialize(report)
-      super(report)
-    end
-
     # Find an IP.
     #
     # @param [String] ip address The IP to find.
@@ -21,4 +16,3 @@ module VirustotalAPI
     end
   end
 end
-# rubocop:enable Lint/UselessMethodDefinition

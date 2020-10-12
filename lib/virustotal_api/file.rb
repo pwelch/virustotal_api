@@ -5,14 +5,6 @@ require_relative 'base'
 module VirustotalAPI
   # A class for '/files' API
   class File < Base
-    attr_reader :id, :report_url
-
-    def initialize(report)
-      super(report)
-      @id = report&.dig('data', 'id')
-      @report_url = report&.dig('data', 'links', 'self')
-    end
-
     # Find a hash.
     #
     # @param [String] resource file as a md5/sha1/sha256 hash

@@ -5,14 +5,6 @@ require_relative 'base'
 module VirustotalAPI
   # A class for '/urls' API
   class URL < Base
-    attr_reader :report_url, :id
-
-    def initialize(report)
-      super(report)
-      @report_url = report&.dig('data', 'links', 'self')
-      @id = report&.dig('data', 'id')
-    end
-
     # Find a URL.
     #
     # @param [String] resource as an ip/domain/url

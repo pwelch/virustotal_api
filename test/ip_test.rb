@@ -19,6 +19,8 @@ class VirustotalAPIIPReportTest < Minitest::Test
       # Make sure that the JSON was parsed
       assert vtip_report.is_a?(VirustotalAPI::IP)
       assert vtip_report.report.is_a?(Hash)
+      assert vtip_report.id.is_a?(String)
+      assert vtip_report.report_url.is_a?(String)
     end
   end
 end

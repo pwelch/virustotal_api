@@ -9,10 +9,12 @@ require 'base64'
 module VirustotalAPI
   # The base class implementing the raw calls to Virustotal API V3.
   class Base
-    attr_reader :report
+    attr_reader :report, :report_url, :id
 
     def initialize(report)
       @report = report
+      @report_url = report&.dig('data', 'links', 'self')
+      @id = report&.dig('data', 'id')
     end
 
     # @return [String] string of API URI class method

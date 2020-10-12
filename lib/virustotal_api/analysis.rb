@@ -5,13 +5,6 @@ require_relative 'base'
 module VirustotalAPI
   # A class for '/analyses' API
   class Analysis < Base
-    attr_reader :report
-
-    # rubocop:disable Lint/MissingSuper
-    def initialize(report)
-      @report = report
-    end
-
     # @param [String] id The Virustotal ID to get the report for.
     # @param [String] api_key The key for virustotal
     # @return [VirustotalAPI::IP] Report
@@ -21,4 +14,3 @@ module VirustotalAPI
     end
   end
 end
-# rubocop:enable Lint/MissingSuper

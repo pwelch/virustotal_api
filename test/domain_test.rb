@@ -17,16 +17,11 @@ class VirustotalAPIDomainTest < Minitest::Test
       vtdomain_report = VirustotalAPI::Domain.find(@domain, @api_key)
 
       # Make sure that the JSON was parsed
+      assert vtdomain_report.exists?
       assert vtdomain_report.is_a?(VirustotalAPI::Domain)
       assert vtdomain_report.report.is_a?(Hash)
-    end
-  end
-
-  def test_exists?
-    VCR.use_cassette('domain') do
-      vtdomain_report = VirustotalAPI::Domain.find(@domain, @api_key)
-
-      assert vtdomain_report.exists?
+      assert vtdomain_report.id.is_a?(String)
+      assert vtdomain_report.report_url.is_a?(String)
     end
   end
 end
