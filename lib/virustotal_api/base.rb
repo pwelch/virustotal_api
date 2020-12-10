@@ -62,7 +62,7 @@ module VirustotalAPI
     # Generate a URL identifier.
     # @see https://developers.virustotal.com/v3.0/reference#url
     def self.url_identifier(url)
-      Base64.encode64(url).strip.gsub('=', '')
+      Base64.strict_encode64(url).strip.gsub('=', '')
     end
   end
 end
