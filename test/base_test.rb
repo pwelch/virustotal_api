@@ -4,6 +4,7 @@ require './test/test_helper'
 
 class VirustotalAPIBaseTest < Minitest::Test
   def setup
+    @domain  = 'xpressco.za'
     @sha256  = '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
     @api_key = 'testapikey'
   end
@@ -40,6 +41,12 @@ class VirustotalAPIBaseTest < Minitest::Test
   def test_not_exists?
     VCR.use_cassette('file_not_found') do
       virustotal_report = VirustotalAPI::File.find(@sha256, @api_key)
+
+      assert !virustotal_report.exists?
+    end
+
+    VCR.use_cassette('domain_bad_request') do
+      virustotal_report = VirustotalAPI::Domain.find(@domain, @api_key)
 
       assert !virustotal_report.exists?
     end

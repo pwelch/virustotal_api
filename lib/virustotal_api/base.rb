@@ -37,7 +37,7 @@ module VirustotalAPI
         payload: options
       )
       JSON.parse(response.body)
-    rescue RestClient::NotFound
+    rescue RestClient::NotFound, RestClient::BadRequest
       {}
     rescue RestClient::Unauthorized
       # Raise a custom exception not to expose the underlying

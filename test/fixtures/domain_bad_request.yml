@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.virustotal.com/api/v3/domains/xpressco.za
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.5.1p57
+      X-Apikey:
+      - testapikey
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.virustotal.com
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Cloud-Trace-Context:
+      - f9f5f005efc95b0390a91fb6306201d6
+      Date:
+      - Mon, 28 Dec 2020 13:56:50 GMT
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '138'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "error": {
+                "code": "InvalidArgumentError",
+                "message": "Domain \"xpressco.za\" is not a valid domain pattern"
+            }
+        }
+    http_version: 
+  recorded_at: Mon, 28 Dec 2020 13:56:50 GMT
+recorded_with: VCR 5.0.0
