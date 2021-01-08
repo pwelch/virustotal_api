@@ -37,7 +37,7 @@ module VirustotalAPI
         payload: options
       )
       JSON.parse(response.body)
-    rescue RestClient::NotFound
+    rescue RestClient::NotFound, RestClient::BadRequest
       {}
     rescue RestClient::Unauthorized
       # Raise a custom exception not to expose the underlying
@@ -62,7 +62,7 @@ module VirustotalAPI
     # Generate a URL identifier.
     # @see https://developers.virustotal.com/v3.0/reference#url
     def self.url_identifier(url)
-      Base64.encode64(url).strip.gsub('=', '')
+      Base64.strict_encode64(url).strip.gsub('=', '')
     end
   end
 end

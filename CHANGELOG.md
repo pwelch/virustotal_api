@@ -1,5 +1,12 @@
 # VirusTotal API Changelog
 
+## [0.5.4] - 2020-12-10
+* Manage bad requests like not found
+* Use strict base64 encoding
+  * [@crondaemon](https://github.com/crondaemon)
+
+## [0.5.3] = 2020-10-12
+
 ## [0.5.2] - 2020-10-06
 
 * Fix Fix exists? check
