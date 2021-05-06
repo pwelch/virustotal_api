@@ -1,8 +1,53 @@
 ---
 http_interactions:
 - request:
+    method: get
+    uri: https://www.virustotal.com/api/v3/files/upload_url
+    body:
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux-gnu x86_64) ruby/2.5.1p57
+      X-Apikey:
+      - testapikey
+      Content-Length:
+      - '282'
+      Content-Type:
+      - multipart/form-data; boundary=----RubyFormBoundaryjv5FxFNLpwqDoUQA
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - www.virustotal.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Cloud-Trace-Context:
+      - 9c3d1ae8f345c5ca8060a4b793174891
+      Date:
+      - Wed, 02 Sep 2020 14:02:36 GMT
+      Server:
+      - Google Frontend
+      Content-Length:
+      - '128'
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "data": "https://www.virustotal.com/_ah/upload/AMmfu6b-_DXUeFe36Sb3b0F4B8mH9Nb-CHbRoUNVOPwG/"
+        }
+    http_version:
+  recorded_at: Wed, 02 Sep 2020 14:02:37 GMT
+
+- request:
     method: post
-    uri: https://www.virustotal.com/api/v3/files
+    uri: https://www.virustotal.com/_ah/upload/AMmfu6b-_DXUeFe36Sb3b0F4B8mH9Nb-CHbRoUNVOPwG/
     body:
       encoding: ASCII-8BIT
       string: "------RubyFormBoundaryjv5FxFNLpwqDoUQA\r\nContent-Disposition: form-data;
@@ -49,6 +94,6 @@ http_interactions:
                 "type": "analysis"
             }
         }
-    http_version: 
+    http_version:
   recorded_at: Wed, 02 Sep 2020 14:02:37 GMT
 recorded_with: VCR 5.0.0

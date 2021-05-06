@@ -23,7 +23,8 @@ module VirustotalAPI
     # @return [VirusotalAPI::File] Report
     def self.upload(file_path, api_key, opts = {})
       filename = opts.fetch('filename') { ::File.basename(file_path) }
-      report = perform('/files', api_key, :post, filename: filename, file: ::File.open(file_path, 'r'))
+      url = upload_url(api_key)
+      report = perform_absolute(url, api_key, :post, filename: filename, file: ::File.open(file_path, 'r'))
       new(report)
     end
 
@@ -43,6 +44,12 @@ module VirustotalAPI
     # @return [Boolean] true if detected
     def detected_by(engine)
       report&.dig('data', 'attributes', 'last_analysis_results', engine, 'category') == 'malicious'
+    end
+
+    # @return [String] path for upload file
+    def self.upload_url(api_key)
+      data = perform('/files/upload_url', api_key)
+      data&.dig('data')
     end
   end
 end

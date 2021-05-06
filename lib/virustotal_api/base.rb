@@ -22,6 +22,14 @@ module VirustotalAPI
       VirustotalAPI::URI
     end
 
+    def self.perform(path, api_key, method = :get, options = {})
+      base_perform(api_uri + path, api_key, method, options)
+    end
+
+    def self.perform_absolute(url, api_key, method = :get, options = {})
+      base_perform(url, api_key, method, options)
+    end
+
     # The actual method performing a call to Virustotal
     #
     # @param [String] url The url of the API
@@ -29,10 +37,10 @@ module VirustotalAPI
     # @param [String] method The HTTP method to use
     # @param [Hash] options Options to pass as payload
     # @return [VirustotalAPI::Domain] Report Search Result
-    def self.perform(url, api_key, method = :get, options = {})
+    def self.base_perform(url, api_key, method = :get, options = {})
       response = RestClient::Request.execute(
         method: method,
-        url: api_uri + url,
+        url: url,
         headers: { 'x-apikey': api_key },
         payload: options
       )
@@ -48,6 +56,8 @@ module VirustotalAPI
       # HTTP client.
       raise VirustotalAPI::RateLimitError
     end
+
+    private_class_method :base_perform
 
     # @return [String] string of API URI instance method
     def api_uri
