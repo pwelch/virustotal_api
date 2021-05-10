@@ -67,8 +67,8 @@ api_key = 'MY_API_KEY'
 
 # for upload file
 vtscan = VirustotalAPI::File.upload(file, api_key)
-# or big file (more than 32MB)
-vtscan = VirustotalAPI::File.upload_big(file, api_key)
+# or large file (more than 32MB)
+vtscan = VirustotalAPI::File.upload_large(file, api_key)
 
 # Virustotal ID of file
 vtscan.id

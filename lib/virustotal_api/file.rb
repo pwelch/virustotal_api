@@ -33,7 +33,7 @@ module VirustotalAPI
     # @param [String] api_key The key for virustotal
     # @param [Hash] opts hash for additional options
     # @return [VirusotalAPI::File] Report
-    def self.upload_big(file_path, api_key, opts = {})
+    def self.upload_large(file_path, api_key, opts = {})
       filename = opts.fetch('filename') { ::File.basename(file_path) }
       url = upload_url(api_key)
       report = perform_absolute(url, api_key, :post, filename: filename, file: ::File.open(file_path, 'r'))

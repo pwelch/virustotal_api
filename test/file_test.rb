@@ -51,9 +51,9 @@ class VirustotalAPIFileTest < Minitest::Test
     end
   end
 
-  def test_upload
-    VCR.use_cassette('big_file_upload') do
-      vt_file_upload = VirustotalAPI::File.upload_big(@file_path, @api_key)
+  def test_upload_large
+    VCR.use_cassette('large_file_upload') do
+      vt_file_upload = VirustotalAPI::File.upload_large(@file_path, @api_key)
 
       assert vt_file_upload.exists?
       assert vt_file_upload.report.is_a?(Hash)
