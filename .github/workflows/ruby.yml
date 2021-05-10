@@ -7,9 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  Test:
+  Test-Ruby2.5:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
@@ -18,6 +17,23 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.5
+    - name: Install dependencies
+      run: bundle install
+    - name: Lint
+      run: bundle exec rake rubocop
+    - name: Run tests
+      run: bundle exec rake
+      
+  Test-Ruby2.7:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+    # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
+    # change this to (see https://github.com/ruby/setup-ruby#versioning):
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
     - name: Install dependencies
       run: bundle install
     - name: Lint
