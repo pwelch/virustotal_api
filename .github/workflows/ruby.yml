@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  Test-Ruby2.5:
+  Test-Ruby-2-5:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -24,7 +24,7 @@ jobs:
     - name: Run tests
       run: bundle exec rake
       
-  Test-Ruby2.7:
+  Test-Ruby-2-7:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
