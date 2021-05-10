@@ -27,6 +27,19 @@ module VirustotalAPI
       new(report)
     end
 
+    # Upload a new file with size more than 32MB.
+    #
+    # @param [String] file_path for file to be sent for scan
+    # @param [String] api_key The key for virustotal
+    # @param [Hash] opts hash for additional options
+    # @return [VirusotalAPI::File] Report
+    def self.upload_large(file_path, api_key, opts = {})
+      filename = opts.fetch('filename') { ::File.basename(file_path) }
+      url = upload_url(api_key)
+      report = perform_absolute(url, api_key, :post, filename: filename, file: ::File.open(file_path, 'r'))
+      new(report)
+    end
+
     # Analyse a hash again.
     #
     # @param [String] resource file as a md5/sha1/sha256 hash
@@ -35,6 +48,12 @@ module VirustotalAPI
     def self.analyse(resource, api_key)
       report = perform("/files/#{resource}/analyse", api_key, :post)
       new(report)
+    end
+
+    # @return [String] url for upload file
+    def self.upload_url(api_key)
+      data = perform('/files/upload_url', api_key)
+      data&.dig('data')
     end
 
     # Check if the submitted hash is detected by an AV engine.
