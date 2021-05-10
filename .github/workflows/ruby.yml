@@ -17,6 +17,8 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.5
+    - name: Show Ruby Version
+      run: ruby --version
     - name: Install dependencies
       run: bundle install
     - name: Lint
@@ -34,6 +36,8 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7
+    - name: Show Ruby Version
+      run: ruby --version
     - name: Install dependencies
       run: bundle install
     - name: Lint
