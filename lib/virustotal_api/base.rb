@@ -12,9 +12,9 @@ module VirustotalAPI
     attr_reader :report, :report_url, :id
 
     def initialize(report)
-      @report = report
+      @report     = report
       @report_url = report&.dig('data', 'links', 'self')
-      @id = report&.dig('data', 'id')
+      @id         = report&.dig('data', 'id')
     end
 
     # @return [String] string of API URI class method

@@ -236,10 +236,11 @@ vtgroup_report.report
 
 ## Contributors
 
-- [@postmodern](https://github.com/postmodern)
-- [@mkunkel](https://github.com/mkunkel)
 - [@jonnynux](https://github.com/jonnynux)
 - [@crondaemon](https://github.com/crondaemon/)
+- [@postmodern](https://github.com/postmodern)
+- [@mkunkel](https://github.com/mkunkel)
+- [@Grandman](https://github.com/Grandman)
 
 ## Contributing
 
