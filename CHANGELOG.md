@@ -1,10 +1,17 @@
 # VirusTotal API Changelog
 
+## [0.5.7] - 2021-09-20
+
+* Remove eol ruby 2.5
+  * [@jonnynux](https://github.com/jonnynux)
+
 ## [0.5.5] - 2021-05-10
+
 * Add support for larger files
   * [@Grandman](https://github.com/Grandman)
 
 ## [0.5.4] - 2020-12-10
+
 * Manage bad requests like not found
 * Use strict base64 encoding
   * [@crondaemon](https://github.com/crondaemon)
