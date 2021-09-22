@@ -6,6 +6,7 @@ class VirustotalAPIBaseTest < Minitest::Test
   def setup
     @domain  = 'xpressco.za'
     @sha256  = '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
+    @url     = 'https://www.dropbox.com/s/qmi112rc4ns75eb/Confidential_123.xls?dl=1'
     @api_key = 'testapikey'
   end
 
@@ -49,6 +50,14 @@ class VirustotalAPIBaseTest < Minitest::Test
       virustotal_report = VirustotalAPI::Domain.find(@domain, @api_key)
 
       assert !virustotal_report.exists?
+    end
+  end
+
+  def test_url_encoding
+    VCR.use_cassette('url_encoding_find') do
+      virustotal_report = VirustotalAPI::URL.find(@url, @api_key)
+
+      assert virustotal_report.exists?
     end
   end
 end
