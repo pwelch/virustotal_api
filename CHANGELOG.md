@@ -2,7 +2,12 @@
 
 ## [0.5.7] - 2021-09-20
 
-* Remove eol ruby 2.5
+* Remove EOL Ruby 2.5
+
+## [0.5.6] - 2021-09-20
+
+* Use urlsafe base64 encoding
+* Fix changelog
   * [@jonnynux](https://github.com/jonnynux)
 
 ## [0.5.5] - 2021-05-10
