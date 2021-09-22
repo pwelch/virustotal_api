@@ -1,5 +1,9 @@
 # VirusTotal API Changelog
 
+## [0.5.7] - 2021-09-20
+
+* Remove EOL Ruby 2.5
+
 ## [0.5.6] - 2021-09-20
 
 * Use urlsafe base64 encoding
