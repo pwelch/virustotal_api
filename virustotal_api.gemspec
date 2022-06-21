@@ -16,11 +16,11 @@ Gem::Specification.new do |spec|
   
   if spec.respond_to?(:metadata)
     spec.metadata["homepage_uri"]          = spec.homepage
-    spec.metadata["source_code_uri"]       = "https://github.com/pwelch/virustotal_api"
-    spec.metadata["changelog_uri"]         = "https://github.com/pwelch/virustotal_api/blob/main/CHANGELOG.md"
-    spec.metadata["rubygems_mfa_required"] = "true"
+    spec.metadata["source_code_uri"]       = 'https://github.com/pwelch/virustotal_api'
+    spec.metadata["changelog_uri"]         = 'https://github.com/pwelch/virustotal_api/blob/main/CHANGELOG.md'
+    spec.metadata["rubygems_mfa_required"] = 'true'
   else
-    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
+    raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
   end
 
   spec.required_ruby_version = '>= 2.7'
