@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description = 'Gem for VirusTotal.com API, supporting API V3'
   spec.homepage    = 'https://github.com/pwelch/virustotal_api'
   spec.license     = 'MIT'
-  
+
   if spec.respond_to?(:metadata)
     spec.metadata['homepage_uri']          = spec.homepage
     spec.metadata['source_code_uri']       = 'https://github.com/pwelch/virustotal_api'
