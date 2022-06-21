@@ -5,14 +5,23 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'virustotal_api/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'virustotal_api'
-  spec.version       = VirustotalAPI::VERSION
-  spec.authors       = ['pwelch']
-  spec.email         = ['paul@pwelch.net']
-  spec.summary       = 'Gem for VirusTotal.com API'
-  spec.description   = 'Gem for VirusTotal.com API, supporting API V3'
-  spec.homepage      = 'https://github.com/pwelch/virustotal_api'
-  spec.license       = 'MIT'
+  spec.name        = 'virustotal_api'
+  spec.version     = VirustotalAPI::VERSION
+  spec.authors     = ['pwelch']
+  spec.email       = ['git@welch.pw']
+  spec.summary     = 'Gem for VirusTotal.com API'
+  spec.description = 'Gem for VirusTotal.com API, supporting API V3'
+  spec.homepage    = 'https://github.com/pwelch/virustotal_api'
+  spec.license     = 'MIT'
+  
+  if spec.respond_to?(:metadata)
+    spec.metadata["homepage_uri"]          = spec.homepage
+    spec.metadata["source_code_uri"]       = "https://github.com/pwelch/virustotal_api"
+    spec.metadata["changelog_uri"]         = "https://github.com/pwelch/virustotal_api/blob/main/CHANGELOG.md"
+    spec.metadata["rubygems_mfa_required"] = "true"
+  else
+    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
+  end
 
   spec.required_ruby_version = '>= 2.7'
 
